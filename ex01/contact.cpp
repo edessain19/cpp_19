@@ -29,10 +29,7 @@ void	Contact::add_contact(int total)
 
 void	Contact::show_contact(int index)
 {
-	if (Index.size() <= 10)
-		std::cout << setw(10) << index << "|" ;
-	else
-		
+	std::cout << setw(10) << index << "|" ;
 	std::cout << setw(10) << FirstName << " |" ;
 	std::cout << setw(10) << LastName << " |" ;
 	std::cout <<  setw(10) << Login << " |" ;
