@@ -6,8 +6,7 @@
 
 int		main(int argc, char **argv)
 {
-	int j = 0;
-	int k = 0;
+	int j = 1;
 	char *str;
 	
 	if (argc == 1)
@@ -17,16 +16,12 @@ int		main(int argc, char **argv)
 	}
 	else
 	{
-		while (argv[j] != NULL)
+		while (j < argc)
 		{
 			str = argv[j];
-			for (int i = 0; i<(int)strlen(argv[j]); i++)
-			{
-				str[k] = toupper(argv[j][i]);
-				k++;
-			}
+			for (int i = 0; i < (int)strlen(argv[j]); i++)
+				str[i] = toupper(argv[j][i]);
 			std::cout << str;
-			k = 0;
 			j++;
 		}
 		std::cout << "\n";
