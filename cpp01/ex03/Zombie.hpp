@@ -6,6 +6,7 @@
 #include <string>
 #include <cctype>
 #include <limits>
+#include <cstdlib>
 
 class Zombie
 {
@@ -13,7 +14,7 @@ class Zombie
 		Zombie();
 		~Zombie();
 
-		Zombie(std::string name, std::string type);
+		void			SetZombie(std::string name, std::string type);
 		void			announce();
 
 	private:

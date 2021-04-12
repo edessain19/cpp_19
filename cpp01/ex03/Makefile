@@ -2,7 +2,7 @@ NAME = zombie
 
 SRCS = main.cpp \
 		Zombie.cpp \
-		ZombieEvent.cpp \
+		ZombieHorde.cpp \
 		
 OBJS = ${SRCS:.cpp=.o}
 

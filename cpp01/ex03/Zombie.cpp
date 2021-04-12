@@ -10,7 +10,7 @@ Zombie::Zombie()
 	m_type = "divers";
 }
 
-Zombie::Zombie(std::string name, std::string type)
+void Zombie::SetZombie(std::string name, std::string type)
 {
     m_name = name;
     m_type = type;
