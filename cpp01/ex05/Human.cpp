@@ -1,4 +1,4 @@
-
+# include "Brain.hpp"
 # include "Human.hpp"
 
 /*
@@ -8,7 +8,7 @@
 // DEFAULT
 Human::Human()
 {
-	
+	std::cout << "Human++" << std::endl;
 }
 
 /*
@@ -17,7 +17,8 @@ Human::Human()
 
 Human::~Human()
 {
-	
+	std::cout << "Human--" << std::endl;
+
 }
 
 /*
@@ -38,3 +39,12 @@ Human& Human::operator=(Human const& copy)
 ** MEMBER FUNCTIONS
 */
 
+Brain &Human::getBrain()
+{
+	return m_brain;
+}
+
+Brain *Human::identify()
+{
+	return m_brain.identify();
+}
