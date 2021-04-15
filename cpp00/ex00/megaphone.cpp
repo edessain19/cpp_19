@@ -11,7 +11,7 @@ int		main(int argc, char **argv)
 	
 	if (argc == 1)
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
 	else
@@ -23,6 +23,8 @@ int		main(int argc, char **argv)
 				str[i] = toupper(argv[j][i]);
 			std::cout << str;
 			j++;
+			if (j != argc)
+				std::cout << " ";
 		}
 		std::cout << "\n";
 	}
