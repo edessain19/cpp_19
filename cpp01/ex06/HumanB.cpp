@@ -27,20 +27,15 @@ HumanB::~HumanB()
 }
 
 /*
-** OPERATORS
-*/
-
-// ASSIGNATION
-HumanB& HumanB::operator=(HumanB const& copy)
-{
-	if (this != &copy)
-	{
-		
-	}
-	return *this;
-}
-
-/*
 ** MEMBER FUNCTIONS
 */
 
+void HumanB::attack()
+{
+	std::cout << _name << " attacks with his " << _weaponB->m_type << std::endl;
+}
+
+void HumanB::set_weapon(Weapon &weapon)
+{
+	_weaponB = &weapon;
+}

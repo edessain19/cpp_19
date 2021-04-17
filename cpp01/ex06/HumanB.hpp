@@ -5,17 +5,23 @@
 # include <iostream>
 # include <string>
 
+# include "Weapon.hpp"
+
 class HumanB
 {
 	public:
 		HumanB();
 		HumanB(HumanB const& copy);
 		~HumanB();
-		HumanB& operator=(HumanB const& copy);
+
+		void attack();
+		void set_weapon(Weapon &weapon);
 
 	private:
-
-
+	//To avoid forced constructor initialization use a pointer on weapon
+	//because a pointer can be initialized with null while a reference cannot
+		std::string _name;
+		Weapon		&_weaponB;
 };
 
 #endif

@@ -11,10 +11,11 @@ class Weapon
 		Weapon();
 		Weapon(Weapon const& copy);
 		~Weapon();
-		Weapon& operator=(Weapon const& copy);
 
+		void				setType(std::string type);
+		const std::string	getType() const;
 	private:
-
+		std::string			_type;
 
 };
 

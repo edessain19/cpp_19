@@ -8,14 +8,13 @@
 // DEFAULT
 Weapon::Weapon()
 {
-	
 }
 
-// COPY
-Weapon::Weapon(Weapon const& copy)
+Weapon::Weapon(std::string type)
 {
-	
+	_type = type;
 }
+
 
 /*
 ** DESTRUCTOR
@@ -27,20 +26,15 @@ Weapon::~Weapon()
 }
 
 /*
-** OPERATORS
-*/
-
-// ASSIGNATION
-Weapon& Weapon::operator=(Weapon const& copy)
-{
-	if (this != &copy)
-	{
-		
-	}
-	return *this;
-}
-
-/*
 ** MEMBER FUNCTIONS
 */
 
+void Weapon::setType(std::string type)
+{
+	_type = type;
+}
+
+const std::string Weapon::getType() const
+{
+	return (_type);
+}

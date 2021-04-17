@@ -5,16 +5,20 @@
 # include <iostream>
 # include <string>
 
+# include "Weapon.hpp"
+
 class HumanA
 {
 	public:
 		HumanA();
 		HumanA(HumanA const& copy);
 		~HumanA();
-		HumanA& operator=(HumanA const& copy);
+
+		void attack();
 
 	private:
-
+		std::string _name;
+		Weapon 		&_weaponA;
 
 };
 
