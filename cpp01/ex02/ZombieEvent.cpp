@@ -3,8 +3,8 @@
 
 ZombieEvent::ZombieEvent()
 {
-    m_name = "";
-    m_type = "";
+    m_name = "Henry";
+    m_type = "standard";
 }
 
 ZombieEvent::~ZombieEvent()

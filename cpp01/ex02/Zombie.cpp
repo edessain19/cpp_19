@@ -6,8 +6,8 @@ Zombie::~Zombie()
 
 Zombie::Zombie()
 {
-	m_name = "Kevin";
-	m_type = "divers";
+	m_name = "Pierre";
+	m_type = "Standard";
 }
 
 Zombie::Zombie(std::string name, std::string type)

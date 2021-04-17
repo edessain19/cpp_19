@@ -7,7 +7,7 @@ Zombie::~Zombie()
 Zombie::Zombie()
 {
 	m_name = "Kevin";
-	m_type = "divers";
+	m_type = "standard";
 }
 
 void Zombie::SetZombie(std::string name, std::string type)
