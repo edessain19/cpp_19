@@ -10,7 +10,6 @@ int main()
 	{
 		std::cout << "Enter your command: ADD, SEARCH or EXIT" << std::endl;
 		std::cin >> cmd;
-
 		for (int i = 0; cmd[i] != 0; i++)
 			cmd[i] = std::toupper(cmd[i]);
 		if (cmd == "ADD")

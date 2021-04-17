@@ -12,8 +12,8 @@
 class Phonebook
 {
     private:
-        Contact     m_contacts[8];
-        int         m_contactNbr;
+        Contact     _contacts[8];
+        int         _contactNbr;
     
     public:
         Phonebook();

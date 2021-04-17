@@ -39,23 +39,23 @@ class Contact
 		std::string		getUnderwearColor() const;
 		std::string		getDarkestSecret() const;
 
-		bool			is_email(std::string str);
 		std::string		getFirstNameFormatted();
 		std::string		getLastNameFormatted();
 		std::string		getNicknameFormatted();
+		bool			is_email(std::string str);
 
 	private:
-		std::string		m_firstName;
-		std::string		m_lastName;
-		std::string		m_nickname;
-		std::string		m_login;
-		std::string		m_postalAddress;
-		std::string		m_email;
-		std::string		m_phoneNumber;
-		std::string		m_birthday;
-		std::string		m_favoriteMeal;
-		std::string		m_underwearColor;
-		std::string		m_darkestSecret;
+		std::string		_firstName;
+		std::string		_lastName;
+		std::string		_nickname;
+		std::string		_login;
+		std::string		_postalAddress;
+		std::string		_email;
+		std::string		_phoneNumber;
+		std::string		_birthday;
+		std::string		_favoriteMeal;
+		std::string		_underwearColor;
+		std::string		_darkestSecret;
 };
 
 #endif

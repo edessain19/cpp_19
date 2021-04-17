@@ -21,7 +21,7 @@ void Contact::setFirstName()
 		std::cout << "First name: ";
 		std::getline(std::cin, name);
 	}
-	m_firstName = name;
+	_firstName = name;
 }
 
 void Contact::setLastName()
@@ -36,7 +36,7 @@ void Contact::setLastName()
         std::cout << "Last name: ";
         std::getline(std::cin, name);
     }
-    m_lastName = name;
+    _lastName = name;
 }
 
 void Contact::setNickname()
@@ -51,7 +51,7 @@ void Contact::setNickname()
         std::cout << "Nickname: ";
         std::getline(std::cin, name);
     }
-    m_nickname = name;
+    _nickname = name;
 }
 
 void Contact::setLogin()
@@ -66,7 +66,7 @@ void Contact::setLogin()
         std::cout << "Login: ";
         std::getline(std::cin, name);
     }
-    m_login = name;
+    _login = name;
 }
 
 void Contact::setPostalAddress()
@@ -81,7 +81,7 @@ void Contact::setPostalAddress()
         std::cout << "Postal Address: ";
         std::getline(std::cin, name);
     }
-    m_postalAddress = name;
+    _postalAddress = name;
 }
 
 bool Contact::is_email(std::string str)
@@ -109,7 +109,7 @@ void Contact::setEmail()
         std::cout << "Email: ";
         std::getline(std::cin, name);
     }
-    m_email = name;
+    _email = name;
 }
 
 void Contact::setPhoneNumber()
@@ -124,7 +124,7 @@ void Contact::setPhoneNumber()
         std::cout << "Phone number: ";
         std::getline(std::cin, name);
     }
-    m_phoneNumber = name;
+    _phoneNumber = name;
 }
 
 void Contact::setBirthday()
@@ -139,7 +139,7 @@ void Contact::setBirthday()
         std::cout << "Birthday: ";
         std::getline(std::cin, name);
     }
-    m_birthday = name;
+    _birthday = name;
 }
 
 void Contact::setFavoriteMeal()
@@ -154,7 +154,7 @@ void Contact::setFavoriteMeal()
         std::cout << "Favorite meal: ";
         std::getline(std::cin, name);
     }
-    m_favoriteMeal = name;
+    _favoriteMeal = name;
 }
 
 void Contact::setUnderwearColor()
@@ -169,7 +169,7 @@ void Contact::setUnderwearColor()
         std::cout << "Underwear color: ";
         std::getline(std::cin, name);
     }
-    m_underwearColor = name;
+    _underwearColor = name;
 }
 
 void Contact::setDarkestSecret()
@@ -184,24 +184,24 @@ void Contact::setDarkestSecret()
         std::cout << "Darkest secret: ";
         std::getline(std::cin, name);
     }
-    m_darkestSecret = name;
+    _darkestSecret = name;
 }
 
-std::string Contact::getFirstName() const { return m_firstName; }
-std::string Contact::getLastName() const { return m_lastName; }
-std::string Contact::getNickname() const { return m_nickname; }
-std::string Contact::getLogin() const { return m_login; }
-std::string Contact::getPostalAddress() const { return m_postalAddress; }
-std::string Contact::getEmail() const { return m_email; }
-std::string Contact::getPhoneNumber() const { return m_phoneNumber; }
-std::string Contact::getBirthday() const { return m_birthday; }
-std::string Contact::getFavoriteMeal() const { return m_favoriteMeal; }
-std::string Contact::getUnderwearColor() const { return m_underwearColor; }
-std::string Contact::getDarkestSecret() const { return m_darkestSecret; }
+std::string Contact::getFirstName() const { return _firstName; }
+std::string Contact::getLastName() const { return _lastName; }
+std::string Contact::getNickname() const { return _nickname; }
+std::string Contact::getLogin() const { return _login; }
+std::string Contact::getPostalAddress() const { return _postalAddress; }
+std::string Contact::getEmail() const { return _email; }
+std::string Contact::getPhoneNumber() const { return _phoneNumber; }
+std::string Contact::getBirthday() const { return _birthday; }
+std::string Contact::getFavoriteMeal() const { return _favoriteMeal; }
+std::string Contact::getUnderwearColor() const { return _underwearColor; }
+std::string Contact::getDarkestSecret() const { return _darkestSecret; }
 
 std::string Contact::getFirstNameFormatted()
 {
-    std::string name = m_firstName;
+    std::string name = _firstName;
 
     if (name.size() > 10)
         name[9] = '.';
@@ -210,7 +210,7 @@ std::string Contact::getFirstNameFormatted()
 
 std::string Contact::getLastNameFormatted()
 {
-    std::string name = m_lastName;
+    std::string name = _lastName;
 
     if (name.size() > 10)
         name[9] = '.';
@@ -219,7 +219,7 @@ std::string Contact::getLastNameFormatted()
 
 std::string Contact::getNicknameFormatted()
 {
-    std::string name = m_nickname;
+    std::string name = _nickname;
 
     if (name.size() > 10)
         name[9] = '.';
