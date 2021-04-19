@@ -5,23 +5,26 @@
 */
 
 // DEFAULT
-FragTrap::FragTrap():  _name(""), _hitPoints(100), _maxHitPoints(100), _energyPoints(100),
-			_maxEnergyPoints(100), _level(1), _meleeDamage(30), _rangedDamage(20), _armorReduction(5)
+FragTrap::FragTrap():
+ClapTrap()
 {
 	std::cout << "constructor of FragTrap is called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name): _name(name), _hitPoints(100), _maxHitPoints(100), _energyPoints(100),
-			_maxEnergyPoints(100), _level(1), _meleeDamage(30), _rangedDamage(20), _armorReduction(5)
+FragTrap::FragTrap(std::string name):
+ClapTrap()
 {
+	_name = name;
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_energyPoints = 100;
+	_maxEnergyPoints = 100;
+	_level = 1;
+	_meleeDamage = 30;
+	_rangedDamage = 20;
+	_armorReduction = 5;
 	std::cout << " Overloaded constructors of FragTrap is called" << std::endl;
 }
-
-// COPY
-// FragTrap::FragTrap(FragTrap const& copy)
-// {
-// 	std::cout << " Copy of constructors called" << std::endl;
-// }
 
 /*
 ** DESTRUCTOR
@@ -62,39 +65,6 @@ void FragTrap::getEnergyPoints()
 void FragTrap::getLevel()
 {
 	std::cout << "FR4G-TP " << _name << " is level" << _level << std::endl;
-}
-
-void	FragTrap::rangeAttack(std::string const &target)
-{
-	std::cout << "FR4G-TP " << _name << " attacks " << target << " from a distance, causing " << _rangedDamage << " damages !" << std::endl;
-}
-
-void	FragTrap::meleeAttack(std::string const &target)
-{
-	std::cout << "FR4G-TP " << _name << " attacks " << target << " in melee, causing " << _meleeDamage << " damages !" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-	int damages = amount - _armorReduction;
-	if (damages < 0)
-		damages = 0;
-	std::cout << "FR4G-TP " << _name << " takes damage and loses " << damages << " hit points" << std::endl;
-	_hitPoints = _hitPoints - (damages);
-	if (_hitPoints < 0)
-		_hitPoints = 0;
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "FR4G-TP " << _name << " regenerates " << amount << " hit points" << std::endl;
-
-	_hitPoints += amount;
-	if (_hitPoints > _maxHitPoints)
-		_hitPoints = _maxHitPoints;
-	_energyPoints += amount;
-	if (_energyPoints > _maxEnergyPoints)
-		_energyPoints = _maxEnergyPoints;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)

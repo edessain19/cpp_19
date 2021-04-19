@@ -5,8 +5,10 @@
 # include <iostream>
 # include <string>
 # include <unistd.h>
+
 # include "ClapTrap.hpp"
-class ScavTrap
+
+class ScavTrap : public ClapTrap
 {
 	public:
 		ScavTrap();
@@ -17,23 +19,7 @@ class ScavTrap
 		void		getHitPoints();
 		void		getEnergyPoints();
 		void		getLevel();
-		void		rangeAttack(std::string const &target);
-		void		meleeAttack(std::string const &target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
 		void		challengeNewcomer();
-
-	private:
-		std::string	_name;
-		int			_hitPoints;
-		int			_maxHitPoints;
-		int			_energyPoints;
-		int			_maxEnergyPoints;
-		int			_level;
-		int			_meleeDamage;
-		int			_rangedDamage;
-		int			_armorReduction;
-
 };
 
 #endif

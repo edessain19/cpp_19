@@ -15,9 +15,10 @@ class ClapTrap
 
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
+		void		meleeAttack(std::string const &target);
+		void		rangeAttack(std::string const &target);
 
-	private:
-		std::string	_name;
+	protected:
 		int			_hitPoints;
 		int			_maxHitPoints;
 		int			_energyPoints;
@@ -26,7 +27,9 @@ class ClapTrap
 		int			_meleeDamage;
 		int			_rangedDamage;
 		int			_armorReduction;
-
+		std::string	_name;
+	
+	private:
 };
 
 #endif

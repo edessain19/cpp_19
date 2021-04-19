@@ -8,31 +8,13 @@
 // DEFAULT
 ClapTrap::ClapTrap()
 {
-	_name = ""
-	_hitPoints = 0;
-	_maxHitPoints = 0;
-	_energyPoints = 0;
-	_maxEnergyPoints = 0;
-	_level = 0;
-	_meleeDamage = 0;
-	_rangedDamage = 0;
-	_armorReduction = 0;
 	std::cout << "constructor of ClapTrap is called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
-{
-	_name = name;
-	_hitPoints = 0;
-	_maxHitPoints = 0;
-	_energyPoints = 0;
-	_maxEnergyPoints = 0;
-	_level = 0;
-	_meleeDamage = 0;
-	_rangedDamage = 0;
-	_armorReduction = 0;
-	std::cout << " Overloaded constructors of ClapTrap is called" << std::endl;
-}
+// ClapTrap::ClapTrap()
+// {
+// 	std::cout << " Overloaded constructors of ClapTrap is called" << std::endl;
+// }
 
 /*
 ** DESTRUCTOR
@@ -60,6 +42,17 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& copy)
 /*
 ** MEMBER FUNCTIONS
 */
+
+
+void	ClapTrap::rangeAttack(std::string const &target)
+{
+	std::cout << "FR4G-TP " << _name << " attacks " << target << " from a distance, causing " << _rangedDamage << " damages !" << std::endl;
+}
+
+void	ClapTrap::meleeAttack(std::string const &target)
+{
+	std::cout << "FR4G-TP " << _name << " attacks " << target << " in melee, causing " << _meleeDamage << " damages !" << std::endl;
+}
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
