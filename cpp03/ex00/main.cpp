@@ -33,4 +33,5 @@ int		main(void)
     sleep(1);
     pokemon.getEnergyPoints();
     pokemon.vaulthunter_dot_exe("Arcanin");
+	return (0);
 }

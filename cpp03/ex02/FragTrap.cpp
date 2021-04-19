@@ -8,13 +8,13 @@
 FragTrap::FragTrap():  _name(""), _hitPoints(100), _maxHitPoints(100), _energyPoints(100),
 			_maxEnergyPoints(100), _level(1), _meleeDamage(30), _rangedDamage(20), _armorReduction(5)
 {
-	std::cout << "constructor called" << std::endl;
+	std::cout << "constructor of FragTrap is called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name): _name(name), _hitPoints(100), _maxHitPoints(100), _energyPoints(100),
 			_maxEnergyPoints(100), _level(1), _meleeDamage(30), _rangedDamage(20), _armorReduction(5)
 {
-	std::cout << " Overloaded constructors called" << std::endl;
+	std::cout << " Overloaded constructors of FragTrap is called" << std::endl;
 }
 
 // COPY
@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string name): _name(name), _hitPoints(100), _maxHitPoint
 
 FragTrap::~FragTrap()
 {
-	std::cout << " Destructor called" << std::endl;
+	std::cout << " Destructor of FragTrap is called" << std::endl;
 }
 
 /*
@@ -51,17 +51,17 @@ FragTrap& FragTrap::operator=(FragTrap const& copy)
 */
 void	FragTrap::getHitPoints()
 {
-	std::cout << _name << " has " << _hitPoints << " hit points" << std::endl;
+	std::cout << "FR4G-TP " << _name << " has " << _hitPoints << " hit points" << std::endl;
 }
 
 void FragTrap::getEnergyPoints()
 {
-	std::cout << _name << " has " << _energyPoints << " energy points" << std::endl;
+	std::cout << "FR4G-TP " << _name << " has " << _energyPoints << " energy points" << std::endl;
 }
 
 void FragTrap::getLevel()
 {
-	std::cout << _name << " is level" << _level << std::endl;
+	std::cout << "FR4G-TP " << _name << " is level" << _level << std::endl;
 }
 
 void	FragTrap::rangeAttack(std::string const &target)

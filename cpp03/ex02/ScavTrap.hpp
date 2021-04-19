@@ -1,19 +1,18 @@
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 # include <iostream>
 # include <string>
-#include <unistd.h>
-
-class FragTrap
+# include <unistd.h>
+# include "ClapTrap.hpp"
+class ScavTrap
 {
 	public:
-		FragTrap();
-		FragTrap(std::string name);
-		// FragTrap(FragTrap const& copy);
-		~FragTrap();
-		FragTrap& operator=(FragTrap const& copy);
+		ScavTrap();
+		ScavTrap(std::string name);
+		~ScavTrap();
+		ScavTrap& operator=(ScavTrap const& copy);
 
 		void		getHitPoints();
 		void		getEnergyPoints();
@@ -22,7 +21,7 @@ class FragTrap
 		void		meleeAttack(std::string const &target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
-		void		vaulthunter_dot_exe(std::string const & target);
+		void		challengeNewcomer();
 
 	private:
 		std::string	_name;
@@ -34,6 +33,7 @@ class FragTrap
 		int			_meleeDamage;
 		int			_rangedDamage;
 		int			_armorReduction;
+
 };
 
 #endif
