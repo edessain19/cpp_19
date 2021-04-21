@@ -6,15 +6,15 @@
 */
 
 // DEFAULT
-Peon::Peon()
+Peon::Peon(std::string name) : Victim(name)
 {
-	
+	std::cout << "Zog zog." << std::endl;
 }
 
 // COPY
-Peon::Peon(Peon const& copy)
+Peon::Peon(Peon const& copy): Victim(copy)
 {
-	
+	std::cout << "Zog zog." << std::endl;
 }
 
 /*
@@ -23,7 +23,7 @@ Peon::Peon(Peon const& copy)
 
 Peon::~Peon()
 {
-	
+	std::cout << "Bleuark..." << std::endl;
 }
 
 /*
@@ -35,7 +35,7 @@ Peon& Peon::operator=(Peon const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_name = copy._name;
 	}
 	return *this;
 }
@@ -44,3 +44,7 @@ Peon& Peon::operator=(Peon const& copy)
 ** MEMBER FUNCTIONS
 */
 
+void Peon::getPolymorphed(void) const
+{
+	std::cout << _name << " has been turned into a pink pony!" << std::endl;
+}

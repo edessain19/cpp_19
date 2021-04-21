@@ -46,7 +46,7 @@ Sorcerer& Sorcerer::operator=(Sorcerer const& copy)
 	{
 		_name = copy._name;
 		_title = copy._title;
-		std::cout << " YOu are now my equal !! You Outstanding Sorcerer !!" << std::endl;
+		std::cout << " You are now my equal !! You Outstanding Sorcerer !!" << std::endl;
 	}
 	return *this;
 }

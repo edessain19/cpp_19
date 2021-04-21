@@ -24,4 +24,6 @@ class Sorcerer
 		std::string		_title;
 };
 
+std::ostream& operator<<( std::ostream &flux, Victim const& copy);
+
 #endif
