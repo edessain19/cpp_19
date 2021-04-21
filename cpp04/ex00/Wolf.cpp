@@ -6,15 +6,15 @@
 */
 
 // DEFAULT
-Wolf::Wolf()
+Wolf::Wolf(std::string name) : Victim(name)
 {
-	
+	std::cout << " Aouuuuh  Aouuuuh." << std::endl;
 }
 
 // COPY
-Wolf::Wolf(Wolf const& copy)
+Wolf::Wolf(Wolf const& copy): Victim(copy)
 {
-	
+	std::cout << " Aouuuuh Aouuuuh." << std::endl;
 }
 
 /*
@@ -23,7 +23,7 @@ Wolf::Wolf(Wolf const& copy)
 
 Wolf::~Wolf()
 {
-	
+	std::cout << "Grrrr..." << std::endl;
 }
 
 /*
@@ -35,7 +35,7 @@ Wolf& Wolf::operator=(Wolf const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_name = copy._name;
 	}
 	return *this;
 }
@@ -44,3 +44,7 @@ Wolf& Wolf::operator=(Wolf const& copy)
 ** MEMBER FUNCTIONS
 */
 
+void Wolf::getPolymorphed(void) const
+{
+	std::cout << _name << " has been turned into a cat!" << std::endl << "miaou miaou..." <<std::endl;
+}
