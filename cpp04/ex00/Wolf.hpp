@@ -5,19 +5,13 @@
 # include <iostream>
 # include <string>
 
-# include "Victim.hpp" 
-
-class Wolf : public Victim
+class Wolf
 {
 	public:
 		Wolf();
-		Wolf(std::string name);
 		Wolf(Wolf const& copy);
-		virtual ~Wolf();
+		~Wolf();
 		Wolf& operator=(Wolf const& copy);
-
-		virtual void getPolymorphed(void) const;
-
 
 	private:
 

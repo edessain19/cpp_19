@@ -5,17 +5,14 @@
 # include <iostream>
 # include <string>
 
-# include "Victim.hpp"
-
-class Peon : public Victim
+class Peon
 {
 	public:
 		Peon();
 		Peon(Peon const& copy);
-		virtual ~Peon();
+		~Peon();
 		Peon& operator=(Peon const& copy);
 
-		virtual void getPolymorphed(void) const;
 	private:
 
 

@@ -8,21 +8,22 @@
 // DEFAULT
 Sorcerer::Sorcerer()
 {
-	
 }
 
-Sorcerer::Sorcerer(std::string name, std::string titre)
+Sorcerer::Sorcerer(std::string name, std::string title)
 {
 	_name = name;
-	_title = titre;
-	std::cout << _name << ", " << _title << ", is born !" << std::endl;
+	_title = title;
+	std::cout << _name << ", " << _title << ", is born!" << std::endl;
 }
 
 // COPY
 Sorcerer::Sorcerer(Sorcerer const& copy)
 {
 	_name = copy._name;
-	_title = copy._title;	
+	_title = copy._title;
+	std::cout << _name << ", " << _title << ", is born!" << std::endl;
+
 }
 
 /*
@@ -31,7 +32,7 @@ Sorcerer::Sorcerer(Sorcerer const& copy)
 
 Sorcerer::~Sorcerer()
 {
-	std::cout << _name << ", " << _title << ", is dead. Consequences will never be the same !" << std::endl;
+std::cout << _name << ", " << _title << ", is dead. Consequences will never be the same!" << std::endl;
 }
 
 /*
@@ -43,7 +44,9 @@ Sorcerer& Sorcerer::operator=(Sorcerer const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_name = copy._name;
+		_title = copy._title;
+		std::cout << " YOu are now my equal !! You Outstanding Sorcerer !!" << std::endl;
 	}
 	return *this;
 }
@@ -52,19 +55,18 @@ Sorcerer& Sorcerer::operator=(Sorcerer const& copy)
 ** MEMBER FUNCTIONS
 */
 
+void        Sorcerer::introduction( void ) const
+{
+	std::cout << "I am " << _name << ", " << _title << ", and I like ponies!" << std::endl;
+}
 
-void		Sorcerer::Polymorph(Victim const & copy) const
+void        Sorcerer::polymorph(Victim const& copy) const
 {
 	copy.getPolymorphed();
 }
 
-std::string	Sorcerer::getName(void) const
+std::ostream&   operator<<( std::ostream &flux, Sorcerer const& copy)
 {
-	return (this->Name);
-}
-
-std::ostream & operator<<(std::ostream & o, Sorcerer const & copy)
-{
-	o << "I am " << copy.getName() << " and i like otters!" << std::endl;
-	return (o);
+	copy.introduction();
+	return flux;
 }
