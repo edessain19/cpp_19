@@ -14,12 +14,14 @@ Victim::Victim()
 Victim::Victim(std::string name)
 {
 	_name = name;
+	std::cout << "Some random victim called " << name << " just appeared!" << std::endl;
 }
 
 // COPY
 Victim::Victim(Victim const& copy)
 {
-	
+	_name = copy._name;
+	std::cout << "Some random victim called " << _name << " just appeared! " << std::endl;  
 }
 
 /*
@@ -28,7 +30,7 @@ Victim::Victim(Victim const& copy)
 
 Victim::~Victim()
 {
-	
+	std::cout << "Victim " << _name << " just died for no apparent reason!" << std::endl;
 }
 
 /*
