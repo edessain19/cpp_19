@@ -52,7 +52,7 @@ std::string AWeapon::getName() const
 	return (_name);
 }
 
-int AWeapon::getCost() const
+int AWeapon::getAPCost() const
 {
 	return (_cost);
 }

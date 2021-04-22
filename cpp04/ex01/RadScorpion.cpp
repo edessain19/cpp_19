@@ -6,16 +6,16 @@
 */
 
 // DEFAULT
-RadScorpion::RadScorpion()
+RadScorpion::RadScorpion() : Enemy(80, "Rad Scorpion")
 {
-	
+	std::cout << "* click click click *" << std::endl;
 }
 
 // COPY
-RadScorpion::RadScorpion(RadScorpion const& copy)
-{
+// RadScorpion::RadScorpion(RadScorpion const& copy)
+// {
 	
-}
+// }
 
 /*
 ** DESTRUCTOR
@@ -23,7 +23,7 @@ RadScorpion::RadScorpion(RadScorpion const& copy)
 
 RadScorpion::~RadScorpion()
 {
-	
+	std::cout << "* SPROTCH *" << std::endl;
 }
 
 /*

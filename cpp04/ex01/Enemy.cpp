@@ -6,16 +6,22 @@
 */
 
 // DEFAULT
+
 Enemy::Enemy()
+{
+
+}
+
+Enemy::Enemy(int hp, std::string type) : _hp(hp), _type(type)
 {
 	
 }
 
 // COPY
-Enemy::Enemy(Enemy const& copy)
-{
+// Enemy::Enemy(Enemy const& copy)
+// {
 	
-}
+// }
 
 /*
 ** DESTRUCTOR
@@ -35,7 +41,7 @@ Enemy& Enemy::operator=(Enemy const& copy)
 {
 	if (this != &copy)
 	{
-		
+		*this = copy;
 	}
 	return *this;
 }
@@ -44,3 +50,26 @@ Enemy& Enemy::operator=(Enemy const& copy)
 ** MEMBER FUNCTIONS
 */
 
+int Enemy::getHP() const
+{
+	return (_hp);
+}
+
+std::string Enemy::getType() const
+{
+	return (_type);
+}
+
+void Enemy::takeDamage(int damage)
+{
+	if (_hp >= damage)
+		_hp -= damage;
+	else
+		_hp = 0;
+}
+
+std::ostream &operator<<(std::ostream &flux, Enemy const& copy)
+{
+	flux << copy.getType() << " has " << copy.getHP() << " hp";
+	return (flux);
+}

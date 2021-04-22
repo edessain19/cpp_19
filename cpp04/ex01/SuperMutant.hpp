@@ -5,13 +5,16 @@
 # include <iostream>
 # include <string>
 
-class SuperMutant
+# include "Enemy.hpp"
+
+class SuperMutant : public Enemy
 {
 	public:
 		SuperMutant();
 		SuperMutant(SuperMutant const& copy);
-		~SuperMutant();
+		virtual ~SuperMutant();
 		SuperMutant& operator=(SuperMutant const& copy);
+		virtual void takeDamage(int damage);
 
 	private:
 

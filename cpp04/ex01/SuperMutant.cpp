@@ -6,16 +6,16 @@
 */
 
 // DEFAULT
-SuperMutant::SuperMutant()
+SuperMutant::SuperMutant() : Enemy(170, "Super Mutan")
 {
-	
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
 // COPY
-SuperMutant::SuperMutant(SuperMutant const& copy)
-{
+// SuperMutant::SuperMutant(SuperMutant const& copy)
+// {
 	
-}
+// }
 
 /*
 ** DESTRUCTOR
@@ -23,7 +23,7 @@ SuperMutant::SuperMutant(SuperMutant const& copy)
 
 SuperMutant::~SuperMutant()
 {
-	
+	std::cout << "Aaargh..." << std::endl;
 }
 
 /*
@@ -44,3 +44,7 @@ SuperMutant& SuperMutant::operator=(SuperMutant const& copy)
 ** MEMBER FUNCTIONS
 */
 
+void SuperMutant::takeDamage(int damage)
+{
+	Enemy::takeDamage(damage - 3);
+}

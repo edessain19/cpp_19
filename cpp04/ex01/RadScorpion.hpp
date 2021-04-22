@@ -5,12 +5,14 @@
 # include <iostream>
 # include <string>
 
-class RadScorpion
+#include "Enemy.hpp"
+
+class RadScorpion : public Enemy
 {
 	public:
 		RadScorpion();
 		RadScorpion(RadScorpion const& copy);
-		~RadScorpion();
+		virtual ~RadScorpion();
 		RadScorpion& operator=(RadScorpion const& copy);
 
 	private:
