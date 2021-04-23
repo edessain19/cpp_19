@@ -10,8 +10,8 @@
 
 typedef struct squadList
 {
-	ISpaceMarine 	*m_unit;
-	squadList		*m_next;
+	ISpaceMarine 	*_unit;
+	squadList		*_next;
 } 				squadList;
 
 class Squad : public ISquad
@@ -27,12 +27,12 @@ class Squad : public ISquad
 		ISpaceMarine* getUnit(int) const;
 		int push(ISpaceMarine*);
 
-		int onlyOnce(ISpaceMarine *a_marine);
+		int onlyOnce(ISpaceMarine * aMarine);
 		squadList *getLast();
 
 	private:
-		int 		m_unitNbr;
-		squadList 	*m_squadList;
+		int 		_unitNbr;
+		squadList 	*_squadList;
 
 };
 

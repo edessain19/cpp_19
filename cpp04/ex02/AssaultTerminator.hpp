@@ -5,7 +5,9 @@
 # include <iostream>
 # include <string>
 
-class AssaultTerminator
+#include "ISpaceMarine.hpp"
+
+class AssaultTerminator : public ISpaceMarine
 {
 	public:
 		AssaultTerminator();
@@ -13,6 +15,10 @@ class AssaultTerminator
 		~AssaultTerminator();
 		AssaultTerminator& operator=(AssaultTerminator const& copy);
 
+		ISpaceMarine* clone() const;
+		void battleCry() const;
+		void rangedAttack() const;
+		void meleeAttack() const;
 	private:
 
 
