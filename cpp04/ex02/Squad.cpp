@@ -6,7 +6,7 @@
 */
 
 // DEFAULT
-Squad::Squad()
+Squad::Squad() : _unitNbr(0)
 {
 	_squadList = new squadList;
 	_squadList->_unit = nullptr;
