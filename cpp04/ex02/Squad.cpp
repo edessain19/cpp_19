@@ -14,10 +14,10 @@ Squad::Squad() : _unitNbr(0)
 }
 
 // COPY
-// Squad::Squad(Squad const& copy)
-// {
-// 	*this = copy;
-// }
+Squad::Squad(Squad const& copy)
+{
+	*this = copy;
+}
 
 /*
 ** DESTRUCTOR
@@ -42,10 +42,25 @@ Squad::~Squad()
 
 // ASSIGNATION
 // deepcopy means a copy on another memory address
-// Squad& Squad::operator=(Squad const& copy)
-// {
-
-// }
+Squad& Squad::operator=(Squad const& copy)
+{
+	while (_squadList != nullptr)
+	{
+		delete _squadList->_unit;
+		_squadList = _squadList->_next;
+	}
+	_squadList = new squadList;
+	_squadList->_unit = nullptr;
+	_squadList->_next = nullptr;
+	squadList *iter;
+	iter = copy._squadList;
+	while (iter != nullptr)
+	{
+		push(iter->_unit->clone());
+		iter = iter->_next;
+	}
+	return (*this);
+}
 
 /*
 ** MEMBER FUNCTIONS
@@ -61,6 +76,7 @@ ISpaceMarine*	Squad::getUnit(int n) const
 	int i = 0;
 	squadList	*iter;
 
+	iter = _squadList;
 	while (i < n && iter && _squadList->_next)
 	{
 		iter = iter->_next;
