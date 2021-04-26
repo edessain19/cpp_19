@@ -11,8 +11,9 @@ Form::Form(std::string const &name, int gradeSign, int gradeExec)
 
 // COPY
 Form::Form(Form const& copy)
+: _name(copy.getName()), _gradeSign(copy.getGrade_sign()), _gradeExec(copy.getGrade_exec())
 {
-	
+	*this = copy;
 }
 
 /*
@@ -33,9 +34,20 @@ Form& Form::operator=(Form const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_signe = copy.getSigne();
+		//All the rest are constant members and cannot be changed value after initiliazation
 	}
 	return *this;
+}
+
+void operator<<(std::ostream &stream, Form &F)
+{
+  stream << "The form " << F.getName();
+  if (F.getSigne() == true)
+    stream << " is signed, ";
+  else
+    stream << " is not signed, ";
+  stream << "grade to sign: " << F.getGrade_sign() << ", grade to execute: " << F.getGrade_exec() << std::endl;
 }
 
 /*
@@ -60,6 +72,17 @@ int Form::getGrade_sign() const
 int Form::getGrade_exec() const
 {
 	return(_gradeExec);
+}
+
+void Form::beSigned(Bureaucrat const &B)
+{
+  if (ExceptionGrade(B.getGrade(), _gradeSign))
+  {
+      _signe = true;
+      B.signForm(*this);
+  }
+  else
+    B.signForm(*this);
 }
 
 int Form::ExceptionGrade(int new_grade)

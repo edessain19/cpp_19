@@ -85,6 +85,14 @@ void Bureaucrat::decGrade(void)
 	ExceptionGrade(_grade + 1);
 }
 
+void Bureaucrat::signForm(Form const &form) const
+{
+  if (form.getSigne() == true)
+    std::cout << _name << " signed the following form: " << form.getName() << std::endl;
+  else
+    std::cout << _name << " cannot sign the following form: " << form.getName() << " because his grade is too low" << std::endl;
+}
+
 std::ostream& operator<<(std::ostream& flux, Bureaucrat const& copy)
 {
 	std::cout << copy.getName() << ", bureaucrat grade " << copy.getGrade() << std::endl;

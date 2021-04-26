@@ -33,6 +33,7 @@ class Form
 		int ExceptionGrade(int grade);
 		bool ExceptionGrade(int grade, int minimum_grade);
 
+
 	class GradeTooHighException : public std::exception
 	{
 		public:
@@ -46,5 +47,7 @@ class Form
 	};
 
 };
+
+void operator<<(std::ostream &stream, Form &F);
 
 #endif
