@@ -12,10 +12,10 @@ AMateria::AMateria(std::string const& type) : _xp(0), _type(type)
 }
 
 // COPY
-// AMateria::AMateria(AMateria const& copy)
-// {
-// 	*this = copy;
-// }
+AMateria::AMateria(AMateria const& copy)
+{
+	*this = copy;
+}
 
 /*
 ** DESTRUCTOR
