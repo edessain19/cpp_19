@@ -29,10 +29,12 @@ class Form
 		int getGrade_sign() const;
 		int getGrade_exec() const;
 		void beSigned(Bureaucrat const &B);
-		
-		int ExceptionGrade(int grade);
-		bool ExceptionGrade(int grade, int minimum_grade);
+		int execute(Bureaucrat const & executor) const;
+		virtual void Action() const = 0;
 
+		int ExceptionGrade(int grade) const;
+		bool ExceptionGrade(int grade, int minimum_grade) const;
+		bool ExceptionUnsigned() const;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -45,6 +47,11 @@ class Form
 		public:
 			const char *what(void) const throw();
 	};
+	class UnsignedException : public std::exception
+  	{
+		public:
+    		const char* what(void) const throw();
+  	};
 
 };
 

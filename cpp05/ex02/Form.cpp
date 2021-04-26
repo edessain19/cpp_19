@@ -76,13 +76,23 @@ int Form::getGrade_exec() const
 
 void Form::beSigned(Bureaucrat const &B)
 {
-  if (ExceptionGrade(B.getGrade(), _gradeSign))
-  {
-      _signe = true;
-      B.signForm(*this);
-  }
-  else
-    B.signForm(*this);
+  	if (ExceptionGrade(B.getGrade(), _gradeSign))
+  	{
+      	_signe = true;
+      	B.signForm(*this);
+  	}
+  	else
+    	B.signForm(*this);
+}
+
+int Form::execute(Bureaucrat const & executor) const
+{
+  	if (!ExceptionGrade(executor.getGrade(), _gradeExec))
+    	return 1;
+  	else if (!ExceptionUnsigned())
+    	return 3;
+  	Action();
+  	return 0;
 }
 
 int Form::ExceptionGrade(int new_grade)
@@ -117,10 +127,26 @@ bool Form::ExceptionGrade(int grade, int minimum_grade)
 	return true;
 }
 
+bool Form::ExceptionUnsigned() const
+{
+	try
+	{
+    	if (!_signe)
+    		throw UnsignedException();
+  	}
+  	catch (std::exception &e)
+  	{
+    	e.what();
+    	return false;
+  	}
+  	return true;
+}
+
 // EXCEPTION
 
 typedef Form::GradeTooHighException GTHE;
 typedef Form::GradeTooLowException GTLE;
+typedef Form::UnsignedException UE;
 
 const char *GTLE::what(void) const throw()
 {
@@ -131,5 +157,11 @@ const char *GTLE::what(void) const throw()
 const char *GTHE::what(void) const throw()
 {
 	std::cerr << "The grade is too low" << std::endl;
+	return (0);
+}
+
+const char *UE::what(void) const throw()
+{
+	std::cerr << "Not able to execute unsigned exception" << std::endl;
 	return (0);
 }
