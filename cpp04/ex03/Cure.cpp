@@ -14,7 +14,7 @@ Cure::Cure() : AMateria("cure")
 // COPY
 Cure::Cure(Cure const& copy) : AMateria("cure")
 {
-	_xp = other.getXP();
+	_xp = copy.getXP();
 }
 
 /*
@@ -35,7 +35,7 @@ Cure& Cure::operator=(Cure const& copy)
 {
 	if (this != &copy)
 	{
-		_xp = other.getXP();
+		_xp = copy.getXP();
 	}
 	return *this;
 }

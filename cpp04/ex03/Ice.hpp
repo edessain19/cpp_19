@@ -5,7 +5,7 @@
 # include <iostream>
 # include <string>
 
-# include "AMaetria.hpp"
+# include "AMateria.hpp"
 
 class Ice : public AMateria
 {

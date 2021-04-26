@@ -6,16 +6,16 @@
 */
 
 // DEFAULT
-AMateria::AMateria(std::string const& type) : _type(type), _xp(0)
+AMateria::AMateria(std::string const& type) : _xp(0), _type(type)
 {
 	
 }
 
 // COPY
-AMateria::AMateria(AMateria const& copy)
-{
-	*this = copy;
-}
+// AMateria::AMateria(AMateria const& copy)
+// {
+// 	*this = copy;
+// }
 
 /*
 ** DESTRUCTOR
@@ -35,8 +35,8 @@ AMateria& AMateria::operator=(AMateria const& copy)
 {
 	if (this != &copy)
 	{
-		_type = copy._type;
 		_xp = copy._xp;
+		_type = copy._type;
 	}
 	return *this;
 }
