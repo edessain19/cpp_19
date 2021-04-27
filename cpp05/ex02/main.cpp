@@ -12,8 +12,8 @@ int main()
     std::cout << *test1;
     PresidentialPardonForm *test2 = new PresidentialPardonForm("test3");
     std::cout << *test2;
-    Bureaucrat *bob = new Bureaucrat(2, "Bob");
-    Bureaucrat *Jack = new Bureaucrat(148, "Jack");
+    Bureaucrat *bob = new Bureaucrat("Bob", 2);
+    Bureaucrat *Jack = new Bureaucrat("Jack", 148);
 
     std::cout << *bob;
     std::cout << *Jack;
@@ -40,9 +40,9 @@ int main()
     bob->executeForm(*test1);
     bob->executeForm(*test2);
 
+    delete bob;
+    delete Jack;
     delete test;
     delete test1;
     delete test2;
-    delete bob;
-    delete Jack;
 }
