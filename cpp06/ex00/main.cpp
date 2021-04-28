@@ -106,7 +106,16 @@ void	convertStr(std::string str)
 int main(int argc, char **argv)
 {
 	if (argc == 2)
-		convertStr(argv[1]);
+	{
+		try
+		{
+			convertStr(argv[1]);
+		}
+		catch (const std::exception &e)
+		{
+			std::cout << "ERROR: " << e.what() << '\n';
+		}
+	}
 	else
 		std::cout << "ERROR : This program just take one parameter" << std::endl;
 }
