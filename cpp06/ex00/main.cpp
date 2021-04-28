@@ -101,8 +101,6 @@ void	convertStr(std::string str)
 	return ;
 }
 
-/////////////////////ATTENTION TROP GRAND NOMBRE GENRE 488888888888888888
-
 int main(int argc, char **argv)
 {
 	if (argc == 2)
@@ -119,3 +117,4 @@ int main(int argc, char **argv)
 	else
 		std::cout << "ERROR : This program just take one parameter" << std::endl;
 }
+// attention limite float à 1 charactere

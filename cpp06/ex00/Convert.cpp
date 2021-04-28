@@ -26,20 +26,20 @@ void cast_int(int i)
 
 void cast_double(double d)
 {
-    std::stringstream ss; // https://www.cplusplus.com/reference/sstream/stringstream/stringstream/
+    std::stringstream ss;
 
 	if (static_cast<char>(d) < 32 || static_cast<char>(d) > 126)
 		std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: " << static_cast<char>(d) << std::endl;
     std::cout << "int: " << static_cast<int>(d) << std::endl;
-    ss << static_cast<float>(d); // from string to float
+    ss << static_cast<float>(d);
     if (ss.str().find('.') < ss.str().length())
 		std::cout << "float: " << ss.str() << "f" << std::endl;
 	else
 		std::cout << "float: " << ss.str() << ".0f" << std::endl;
     ss.str(std::string());
-	ss << d;// from string to double
+	ss << d;
 	if (ss.str().find('.') < ss.str().length())
 		std::cout << "double: " << ss.str() << std::endl;
 	else
