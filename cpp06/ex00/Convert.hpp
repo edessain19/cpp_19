@@ -3,22 +3,18 @@
 #define CONVERT_HPP
 
 # include <iostream>
+# include <sstream>
 # include <string>
 # include <limits>
 # include <cmath>
 # include <cctype>
 
-class Convert
-{
-	public:
-		Convert();
-		Convert(Convert const& copy);
-		~Convert();
-		Convert& operator=(Convert const& copy);
 
-	private:
-
-
-};
+	void cast_char(char c);
+	void cast_int(int i);
+	void cast_double(double d);
+	void special_double(double d);
+	void cast_float(float f);
+	void special_float(float f);
 
 #endif
