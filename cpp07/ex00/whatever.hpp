@@ -7,9 +7,10 @@
 template<typename T>
 void swap(T &x, T &y)
 {
-    T tmp = x;
-    T tmp2 = y;
-    x = tmp2;
+    T tmp;
+    
+    tmp = x;
+    x = y;
     y = tmp;
 }
 
