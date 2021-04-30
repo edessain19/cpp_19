@@ -15,7 +15,6 @@ int Contact::setFirstName()
 	{
 		std::cout << "Wrong input" << std::endl;
 		std::cout << "First name: ";
-        std::cin.ignore();
 		if (!std::getline(std::cin, name))
             return 0;
 	}

@@ -17,9 +17,10 @@ Phonebook::~Phonebook()
 int Phonebook::createContact()
 {
 	_contactNbr++;
-	if (_contactNbr > 7)
+	if (_contactNbr > 8)
 	{
 		std::cout << "Your Phonebook is full !" << std::endl;
+        _contactNbr--;
 		return -2;
 	}
 	if (!_contacts[_contactNbr].setFirstName())
@@ -51,7 +52,6 @@ void Phonebook::showContacts()
 {
 	int i = 0;
 
-	std::cout << "Enter your contact number : " << std::endl;
 	std::cout << " |First Name| Last Name|  Nickname|" << std::endl;
 	while (i <= _contactNbr)
 	{
@@ -65,9 +65,10 @@ void Phonebook::showContacts()
 
 void Phonebook::showContact(int inputUser)
 {
-    if (_contactNbr < inputUser - 1)
+    if (_contactNbr + 1 <= inputUser|| inputUser > 1)
     {
         std::cout << "This contact doesn't exist" << std::endl;
+        std::cout << _contactNbr << std::endl;
         return ;
     }
     std::cout << "First name : " << _contacts[inputUser - 1].getFirstName() << std::endl;
@@ -101,7 +102,6 @@ int Phonebook::searchContact()
         return 0;
     }
     this->showContacts();
-    // std::cin.ignore();
     std::cout << "Desired contact index: ";
     std::getline(std::cin, inputUser);
     while (inputUser == "" || !isNumeric(inputUser))
