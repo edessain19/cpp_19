@@ -101,10 +101,9 @@ int Phonebook::searchContact()
         return 0;
     }
     this->showContacts();
+    // std::cin.ignore();
     std::cout << "Desired contact index: ";
-    std::cin.ignore();
-    if (!std::getline(std::cin, inputUser))
-        return 0;
+    std::getline(std::cin, inputUser);
     while (inputUser == "" || !isNumeric(inputUser))
     {
         std::cout << "Wrong input" << std::endl;
