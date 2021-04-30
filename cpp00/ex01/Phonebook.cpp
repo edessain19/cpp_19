@@ -65,23 +65,24 @@ void Phonebook::showContacts()
 
 void Phonebook::showContact(int inputUser)
 {
-    if (_contactNbr + 1 <= inputUser|| inputUser > 1)
+    inputUser--;
+    if (_contactNbr < inputUser|| inputUser < 0)
     {
         std::cout << "This contact doesn't exist" << std::endl;
         std::cout << _contactNbr << std::endl;
         return ;
     }
-    std::cout << "First name : " << _contacts[inputUser - 1].getFirstName() << std::endl;
-    std::cout << "Last name : " << _contacts[inputUser - 1].getLastName() << std::endl;
-    std::cout << "Nickname : " << _contacts[inputUser - 1].getNickname() << std::endl;
-    std::cout << "Login : " << _contacts[inputUser - 1].getLogin() << std::endl;
-    std::cout << "Postal address : " << _contacts[inputUser - 1].getPostalAddress() << std::endl;
-    std::cout << "Email : " << _contacts[inputUser - 1].getEmail() << std::endl;
-    std::cout << "Phone number : " << _contacts[inputUser - 1].getPhoneNumber() << std::endl;
-    std::cout << "Phone number : " << _contacts[inputUser - 1].getBirthday() << std::endl;
-    std::cout << "Favorite meal : " << _contacts[inputUser - 1].getFavoriteMeal() << std::endl;
-    std::cout << "Underwear color : " << _contacts[inputUser - 1].getUnderwearColor() << std::endl;
-    std::cout << "Darkest secret : " << _contacts[inputUser - 1].getDarkestSecret() << std::endl;
+    std::cout << "First name : " << _contacts[inputUser].getFirstName() << std::endl;
+    std::cout << "Last name : " << _contacts[inputUser].getLastName() << std::endl;
+    std::cout << "Nickname : " << _contacts[inputUser].getNickname() << std::endl;
+    std::cout << "Login : " << _contacts[inputUser].getLogin() << std::endl;
+    std::cout << "Postal address : " << _contacts[inputUser].getPostalAddress() << std::endl;
+    std::cout << "Email : " << _contacts[inputUser].getEmail() << std::endl;
+    std::cout << "Phone number : " << _contacts[inputUser].getPhoneNumber() << std::endl;
+    std::cout << "Phone number : " << _contacts[inputUser].getBirthday() << std::endl;
+    std::cout << "Favorite meal : " << _contacts[inputUser].getFavoriteMeal() << std::endl;
+    std::cout << "Underwear color : " << _contacts[inputUser].getUnderwearColor() << std::endl;
+    std::cout << "Darkest secret : " << _contacts[inputUser].getDarkestSecret() << std::endl;
 }
 
 bool Phonebook::isNumeric(std::string str) 
