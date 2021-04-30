@@ -23,8 +23,6 @@ int		main(int argc, char **argv)
 				str[i] = toupper(argv[j][i]);
 			std::cout << str;
 			j++;
-			// if (j != argc)
-			// 	std::cout << " ";
 		}
 		std::cout << "\n";
 	}
