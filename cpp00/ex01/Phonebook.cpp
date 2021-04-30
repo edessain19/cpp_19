@@ -23,7 +23,7 @@ int Phonebook::createContact()
 		return -2;
 	}
 	if (!_contacts[_contactNbr].setFirstName())
-        return (Phonebook::createContact());
+        return (-1);
 	if (!_contacts[_contactNbr].setLastName())
         return -1;
 	if (!_contacts[_contactNbr].setNickname())
@@ -109,7 +109,7 @@ int Phonebook::searchContact()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Desired contact index: ";
-        if (std::getline(std::cin, inputUser))
+        if (!std::getline(std::cin, inputUser))
             return 0;
     }
     this->showContact(std::stoi(inputUser));

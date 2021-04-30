@@ -9,14 +9,14 @@ int Contact::setFirstName()
 	std::string name;
 
 	std::cout << "First name: ";
-	std::cin.ignore();
 	if (!std::getline(std::cin, name))
         return (0);
 	while (name == "")
 	{
 		std::cout << "Wrong input" << std::endl;
 		std::cout << "First name: ";
-		if (std::getline(std::cin, name))
+        std::cin.ignore();
+		if (!std::getline(std::cin, name))
             return 0;
 	}
 	_firstName = name;
@@ -34,7 +34,7 @@ int Contact::setLastName()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Last name: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _lastName = name;
@@ -52,7 +52,7 @@ int Contact::setNickname()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Nickname: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _nickname = name;
@@ -70,7 +70,7 @@ int Contact::setLogin()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Login: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _login = name;
@@ -88,7 +88,7 @@ int Contact::setPostalAddress()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Postal Address: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _postalAddress = name;
@@ -119,7 +119,7 @@ int Contact::setEmail()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Email: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _email = name;
@@ -137,7 +137,7 @@ int Contact::setPhoneNumber()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Phone number: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _phoneNumber = name;
@@ -155,7 +155,7 @@ int Contact::setBirthday()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Birthday: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _birthday = name;
@@ -173,7 +173,7 @@ int Contact::setFavoriteMeal()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Favorite meal: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _favoriteMeal = name;
@@ -191,7 +191,7 @@ int Contact::setUnderwearColor()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Underwear color: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _underwearColor = name;
@@ -209,7 +209,7 @@ int Contact::setDarkestSecret()
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Darkest secret: ";
-		if (std::getline(std::cin, name))
+		if (!std::getline(std::cin, name))
             return 0;
     }
     _darkestSecret = name;
