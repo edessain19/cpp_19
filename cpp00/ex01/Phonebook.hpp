@@ -18,8 +18,8 @@ class Phonebook
     public:
         Phonebook();
         ~Phonebook();
-        void createContact();
-        void searchContact();
+        int createContact();
+        int searchContact();
         void showContacts();
         void showContact(int inputUser);
         bool isNumeric(std::string str);

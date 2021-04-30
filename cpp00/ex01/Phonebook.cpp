@@ -14,25 +14,37 @@ Phonebook::~Phonebook()
     autres vérifications si nécessaire avant la destruction de l'objet. */
 }
 
-void Phonebook::createContact()
+int Phonebook::createContact()
 {
 	_contactNbr++;
 	if (_contactNbr > 7)
 	{
 		std::cout << "Your Phonebook is full !" << std::endl;
-		return ;
+		return -2;
 	}
-	_contacts[_contactNbr].setFirstName();
-	_contacts[_contactNbr].setLastName();
-	_contacts[_contactNbr].setNickname();
-	_contacts[_contactNbr].setLogin();
-	_contacts[_contactNbr].setPostalAddress();
-	_contacts[_contactNbr].setEmail();
-	_contacts[_contactNbr].setPhoneNumber();
-	_contacts[_contactNbr].setBirthday();
-	_contacts[_contactNbr].setFavoriteMeal();
-	_contacts[_contactNbr].setUnderwearColor();
-	_contacts[_contactNbr].setDarkestSecret();
+	if (!_contacts[_contactNbr].setFirstName())
+        return (Phonebook::createContact());
+	if (!_contacts[_contactNbr].setLastName())
+        return -1;
+	if (!_contacts[_contactNbr].setNickname())
+        return -1;
+	if (!_contacts[_contactNbr].setLogin())
+        return -1;
+	if (!_contacts[_contactNbr].setPostalAddress())
+        return -1;
+	if (!_contacts[_contactNbr].setEmail())
+        return -1;
+	if (!_contacts[_contactNbr].setPhoneNumber())
+        return -1;
+	if (!_contacts[_contactNbr].setBirthday())
+        return -1;
+	if (!_contacts[_contactNbr].setFavoriteMeal())
+        return -1;
+	if (!_contacts[_contactNbr].setUnderwearColor())
+        return -1;
+	if (!_contacts[_contactNbr].setDarkestSecret())
+        return -1;
+    return 1;
 }
 
 void Phonebook::showContacts()
@@ -79,16 +91,18 @@ bool Phonebook::isNumeric(std::string str)
       return true;
 }
 
-void Phonebook::searchContact()
+int Phonebook::searchContact()
 {
     std::string     inputUser;
 
     if (_contactNbr == -1)
     {
         std::cout << "No contacts in your Phonebook, add one or exit!" << std::endl;
-        return ;
+        return 0;
     }
     this->showContacts();
+    std::cout << "Desired contact index: ";
+    std::cin.ignore();
     std::getline(std::cin, inputUser);
     while (inputUser == "" || !isNumeric(inputUser))
     {
@@ -97,4 +111,5 @@ void Phonebook::searchContact()
         std::getline(std::cin, inputUser);
     }
     this->showContact(std::stoi(inputUser));
+    return 0;
 }

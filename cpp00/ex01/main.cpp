@@ -14,8 +14,14 @@ int main()
 			cmd[i] = std::toupper(cmd[i]);
 		if (cmd == "ADD")
 			myPhonebook.createContact();
-		if (cmd == "SEARCH")
-			myPhonebook.searchContact();
+		else if (cmd == "SEARCH")
+		{
+			if (myPhonebook.searchContact() == -1)
+			{
+				std::cout << "Goodbye!" << std::endl;
+				break ;
+			}
+		}
 		else if (cmd == "EXIT")
 		{
 			std::cout << "Goodbye!" << std::endl;

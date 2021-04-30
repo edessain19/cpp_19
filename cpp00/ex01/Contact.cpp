@@ -1,20 +1,17 @@
 #include "Contact.hpp"
 
-Contact::Contact()
-{
-}
+Contact::Contact() {}
 
-Contact::~Contact()
-{
-}
+Contact::~Contact() {}
 
-void Contact::setFirstName()
+int Contact::setFirstName()
 {
 	std::string name;
 
 	std::cout << "First name: ";
 	std::cin.ignore();
-	std::getline(std::cin, name);
+	if (!std::getline(std::cin, name))
+        return (0);
 	while (name == "")
 	{
 		std::cout << "Wrong input" << std::endl;
@@ -22,14 +19,16 @@ void Contact::setFirstName()
 		std::getline(std::cin, name);
 	}
 	_firstName = name;
+    return (1);
 }
 
-void Contact::setLastName()
+int Contact::setLastName()
 {
     std::string name;
 
     std::cout << "Last name: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -37,14 +36,16 @@ void Contact::setLastName()
         std::getline(std::cin, name);
     }
     _lastName = name;
+    return (1);
 }
 
-void Contact::setNickname()
+int Contact::setNickname()
 {
     std::string name;
 
     std::cout << "Nickname: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -52,14 +53,16 @@ void Contact::setNickname()
         std::getline(std::cin, name);
     }
     _nickname = name;
+    return (1);
 }
 
-void Contact::setLogin()
+int Contact::setLogin()
 {
     std::string name;
 
     std::cout << "Login: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -67,14 +70,16 @@ void Contact::setLogin()
         std::getline(std::cin, name);
     }
     _login = name;
+    return (1);
 }
 
-void Contact::setPostalAddress()
+int Contact::setPostalAddress()
 {
     std::string name;
 
     std::cout << "Postal Address: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -82,6 +87,7 @@ void Contact::setPostalAddress()
         std::getline(std::cin, name);
     }
     _postalAddress = name;
+    return (1);
 }
 
 bool Contact::is_email(std::string str)
@@ -97,12 +103,13 @@ bool Contact::is_email(std::string str)
     return (false);
 }
 
-void Contact::setEmail()
+int Contact::setEmail()
 {
     std::string name;
 
     std::cout << "Email: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (!is_email(name))
     {
         std::cout << "Wrong input" << std::endl;
@@ -110,14 +117,16 @@ void Contact::setEmail()
         std::getline(std::cin, name);
     }
     _email = name;
+    return (1);
 }
 
-void Contact::setPhoneNumber()
+int Contact::setPhoneNumber()
 {
     std::string name;
 
     std::cout << "Phone number: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -125,14 +134,16 @@ void Contact::setPhoneNumber()
         std::getline(std::cin, name);
     }
     _phoneNumber = name;
+    return (1);
 }
 
-void Contact::setBirthday()
+int Contact::setBirthday()
 {
     std::string name;
 
     std::cout << "Birthday: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -140,14 +151,16 @@ void Contact::setBirthday()
         std::getline(std::cin, name);
     }
     _birthday = name;
+    return (1);
 }
 
-void Contact::setFavoriteMeal()
+int Contact::setFavoriteMeal()
 {
     std::string name;
 
     std::cout << "Favorite meal: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -155,14 +168,16 @@ void Contact::setFavoriteMeal()
         std::getline(std::cin, name);
     }
     _favoriteMeal = name;
+    return (1);
 }
 
-void Contact::setUnderwearColor()
+int Contact::setUnderwearColor()
 {
     std::string name;
 
     std::cout << "Underwear color: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -170,14 +185,16 @@ void Contact::setUnderwearColor()
         std::getline(std::cin, name);
     }
     _underwearColor = name;
+    return (1);
 }
 
-void Contact::setDarkestSecret()
+int Contact::setDarkestSecret()
 {
     std::string name;
 
     std::cout << "Darkest secret: ";
-    std::getline(std::cin, name);
+    if (!std::getline(std::cin, name))
+        return (0);
     while (name == "")
     {
         std::cout << "Wrong input" << std::endl;
@@ -185,6 +202,7 @@ void Contact::setDarkestSecret()
         std::getline(std::cin, name);
     }
     _darkestSecret = name;
+    return (1);
 }
 
 std::string Contact::getFirstName() const { return _firstName; }
