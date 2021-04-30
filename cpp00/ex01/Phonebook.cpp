@@ -103,12 +103,14 @@ int Phonebook::searchContact()
     this->showContacts();
     std::cout << "Desired contact index: ";
     std::cin.ignore();
-    std::getline(std::cin, inputUser);
+    if (std::getline(std::cin, inputUser))
+        return 0;
     while (inputUser == "" || !isNumeric(inputUser))
     {
         std::cout << "Wrong input" << std::endl;
         std::cout << "Desired contact index: ";
-        std::getline(std::cin, inputUser);
+        if (std::getline(std::cin, inputUser))
+            return 0;
     }
     this->showContact(std::stoi(inputUser));
     return 0;
