@@ -26,6 +26,15 @@ HumanA::~HumanA()
 	
 }
 
+HumanA& HumanA::operator=(HumanA const& copy)
+{
+	if (this != &copy)
+	{
+		
+	}
+	return *this;
+}
+
 /*
 ** MEMBER FUNCTIONS
 */
