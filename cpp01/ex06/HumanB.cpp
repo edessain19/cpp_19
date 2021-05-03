@@ -11,6 +11,11 @@ HumanB::HumanB()
 	
 }
 
+HumanB::HumanB(std::string name)
+{
+	_name = name;
+}
+
 // COPY
 HumanB::HumanB(HumanB const& copy)
 {
@@ -32,10 +37,10 @@ HumanB::~HumanB()
 
 void HumanB::attack()
 {
-	std::cout << _name << " attacks with his " << _weaponB->m_type << std::endl;
+	std::cout << _name << " attacks with his " << _weaponB->gettype() << std::endl;
 }
 
-void HumanB::set_weapon(Weapon &weapon)
+void HumanB::setWeapon(Weapon &weapon)
 {
 	_weaponB = &weapon;
 }

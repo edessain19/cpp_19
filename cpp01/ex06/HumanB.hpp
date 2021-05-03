@@ -11,11 +11,12 @@ class HumanB
 {
 	public:
 		HumanB();
+		HumanB(std::string name);
 		HumanB(HumanB const& copy);
 		~HumanB();
 
 		void attack();
-		void set_weapon(Weapon &weapon);
+		void setWeapon(Weapon &weapon);
 
 	private:
 	//To avoid forced constructor initialization use a pointer on weapon

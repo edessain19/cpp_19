@@ -9,6 +9,7 @@ class Weapon
 {
 	public:
 		Weapon();
+		Weapon(std::string type);
 		Weapon(Weapon const& copy);
 		~Weapon();
 

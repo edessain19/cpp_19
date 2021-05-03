@@ -11,6 +11,12 @@ HumanA::HumanA()
 	
 }
 
+HumanA::HumanA(std::string name, Weapon &type)
+{
+	_name = name;
+	_weaponA = type;
+}
+
 // COPY
 HumanA::HumanA(HumanA const& copy)
 {
