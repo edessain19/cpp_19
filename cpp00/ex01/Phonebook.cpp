@@ -17,7 +17,7 @@ Phonebook::~Phonebook()
 int Phonebook::createContact()
 {
 	_contactNbr++;
-	if (_contactNbr > 8)
+	if (_contactNbr > 7)
 	{
 		std::cout << "Your Phonebook is full !" << std::endl;
         _contactNbr--;
@@ -69,7 +69,6 @@ void Phonebook::showContact(int inputUser)
     if (_contactNbr < inputUser|| inputUser < 0)
     {
         std::cout << "This contact doesn't exist" << std::endl;
-        std::cout << _contactNbr << std::endl;
         return ;
     }
     std::cout << "First name : " << _contacts[inputUser].getFirstName() << std::endl;
