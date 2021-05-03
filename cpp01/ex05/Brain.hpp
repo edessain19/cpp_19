@@ -12,7 +12,7 @@ class Brain
 		~Brain();
 
 		Brain& operator=(Brain const& copy);
-		Brain *identify();
+		const Brain *identify() const;
 	private:
 		std::string	m_lobe;
 		std::string	m_cortex;

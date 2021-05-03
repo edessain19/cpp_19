@@ -36,7 +36,7 @@ Brain& Brain::operator=(Brain const& copy)
 ** MEMBER FUNCTIONS
 */
 
-Brain *Brain::identify()
+const Brain *Brain::identify() const
 {
 	return (this);
 }

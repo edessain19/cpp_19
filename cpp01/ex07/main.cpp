@@ -1,48 +1,39 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <sstream>
 
-int	error(std::string str)
+int main(int argc, char **argv)
 {
-	std::cout << str << std::endl;
-	return (1);
-}
+	if (argc != 4)
+	{
+		std::cerr << "Error"<< std::endl;
+		return (1);
+	}
+	std::string	replace = argv[1]; 
+	replace += ".replace";
+	std::string s1 = argv[2];
+	std::string s2 = argv[3];
+	std::ifstream ifs(argv[1]);
+	std::string	output;
+	std::string::size_type index = 0;
+	std::ofstream ofs(replace);
 
-int     main(int argc, char **argv)
-{
-    if (argc != 4)
-		return (error("Error : arguments not valid"));
-    std::string filename = argv[1];
-    std::string s1 = argv[2];
-    std::string s2 = argv[3];
-    std::ifstream   ifs(filename);
-    if (!ifs)
-        return (error("Error : File can't open"));
-    filename += ".replace";
-    std::ofstream ofs(filename);
-    if (!ofs)
-        return (error("Error : File can't open"));
+	if (!ifs.is_open() || !ofs.is_open() || s1.empty() || s2.empty())
+	{
+		std::cerr << "Error" << std::endl;
+		ifs.close();
+		ofs.close();
+		return (1);
+	}
+	std::stringstream buffer;
+	buffer << ifs.rdbuf();
+	output = buffer.str();
 
-    std::string str;
-    char    c;
-    int     i;
-
-    while (ifs.get(c))
-    {
-        if (c == ' ')
-        {
-            if (str.compare(s1) == 0)
-                ofs << s2 << " ";
-            else
-                ofs << str << " ";
-            str.erase();
-        }
-        else
-            str += c;
-    }
-    if (str.compare(s1) == 0)
-        ofs << s2 << " ";
-    else
-        ofs << str << " ";
-    str.erase();
-    return (0);
+	while ((index = output.find(s1)) != std::string::npos)
+		output.replace(index, s1.length(), s2);
+	ofs << output;
+	ifs.close();
+	ofs.close();
+	return (0);
 }

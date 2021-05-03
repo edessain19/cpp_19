@@ -13,8 +13,8 @@ class Human
 		Human& operator=(Human const& copy);
 		
 		Brain m_brain;
-		Brain *identify();
-		Brain &getBrain();
+		const Brain *identify() const;
+		const Brain &getBrain() const;
 
 	private:
 

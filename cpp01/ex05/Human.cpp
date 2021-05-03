@@ -39,12 +39,12 @@ Human& Human::operator=(Human const& copy)
 ** MEMBER FUNCTIONS
 */
 
-Brain &Human::getBrain()
+const Brain &Human::getBrain() const
 {
 	return m_brain;
 }
 
-Brain *Human::identify()
+const Brain *Human::identify() const
 {
 	return m_brain.identify();
 }
