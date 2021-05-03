@@ -31,10 +31,10 @@ HumanB::~HumanB()
 
 void HumanB::attack()
 {
-	std::cout << _name << " attacks with his " << _weaponB.getType() << std::endl;
+	std::cout << _name << " attacks with his " << _weaponB->getType() << std::endl;
 }
 
 void HumanB::setWeapon(Weapon &weapon)
 {
-	_weaponB = weapon;
+	_weaponB = &weapon;
 }

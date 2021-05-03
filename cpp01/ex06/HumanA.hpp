@@ -20,7 +20,7 @@ class HumanA
 
 	private:
 		std::string _name;
-		Weapon 		&_weaponA;
+		Weapon 		*_weaponA;
 
 };
 
