@@ -12,7 +12,6 @@ class HumanA
 	public:
 		HumanA();
 		HumanA(std::string name, Weapon &type);
-		HumanA(HumanA const& copy);
 		~HumanA();
 
 		void attack();

@@ -12,7 +12,6 @@ class HumanB
 	public:
 		HumanB();
 		HumanB(std::string name);
-		HumanB(HumanB const& copy);
 		~HumanB();
 
 		void attack();

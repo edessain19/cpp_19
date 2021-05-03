@@ -11,16 +11,10 @@ HumanA::HumanA()
 	
 }
 
-HumanA::HumanA(std::string name, Weapon &type)
+HumanA::HumanA(std::string name, Weapon &weapon)
 {
 	_name = name;
-	_weaponA = type;
-}
-
-// COPY
-HumanA::HumanA(HumanA const& copy)
-{
-	
+	_weaponA = weapon;
 }
 
 /*
@@ -39,5 +33,5 @@ HumanA::~HumanA()
 void HumanA::attack()
 {
 	// Use of reference to be able to get the type in the Weapon object
-	std::cout << _name << " attacks with his " << _weaponA._type << std::endl;
+	std::cout << _name << " attacks with his " << _weaponA.getType() << std::endl;
 }
