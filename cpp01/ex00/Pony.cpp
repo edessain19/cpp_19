@@ -3,7 +3,7 @@
 Pony::Pony()
 {
     std::cout << "constructeur called" << std::endl;
-    m_name = "";
+    _name = "";
 }
 
 Pony::~Pony()
@@ -13,10 +13,10 @@ Pony::~Pony()
 
 void Pony::set_name(std::string str)
 {
-    m_name = str;
+    _name = str;
 }
 
 std::string Pony::get_name()
 {
-    return (m_name);
+    return (_name);
 }

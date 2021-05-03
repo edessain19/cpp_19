@@ -17,7 +17,7 @@ class Pony
 		std::string	get_name();
 
 	private:
-		std::string		m_name;
+		std::string		_name;
 };
 
 #endif

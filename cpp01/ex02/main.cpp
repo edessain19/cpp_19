@@ -1,21 +1,25 @@
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
-int	main()
+int main()
 {
-	Zombie	paul = Zombie("Paul", "plante");
-    ZombieEvent zombie_normal;
-	ZombieEvent zombie_random;
+    std::cout << "========= Test for class Zombie =========" << std::endl;
+    Zombie Mich = Zombie("Mich", "Moche");
+    Zombie Rody = Zombie("Rody");
+    Mich.advert();
+    Rody.advert();
 
-	std::cout << "----- test Zombie ---------" << std::endl;
-	paul.announce();
+    std::cout << "========= Test for class ZombieEvent =========" << std::endl;
+    Zombie *mama;
+    ZombieEvent event;
+    mama = event.newZombie("Mama");
+    event.setZombieType(*mama, "Dangerous");
+    mama->advert();
+    delete mama;
 
-	std::cout << "----- test ZombieEvent normal ---------" << std::endl;
-	zombie_normal.setZombieType("banal");
-	zombie_normal.newZombie("Lio");
-	zombie_normal.announce();
+    std::cout << "========= Test for class ZombieEvent (random) =========" << std::endl;
+    ZombieEvent random;
+    random.randomChump();
 
-	std::cout << "----- test ZombieEvent normal ---------" << std::endl;
-	zombie_random.randomChump();
-	return (0);
+    return (0);
 }

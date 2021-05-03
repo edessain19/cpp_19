@@ -14,7 +14,6 @@ class Phonebook
     private:
         Contact     _contacts[8];
         int         _contactNbr;
-        int         _contactIndex;
     
     public:
         Phonebook();
