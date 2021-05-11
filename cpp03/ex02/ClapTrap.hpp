@@ -18,6 +18,10 @@ class ClapTrap
 		void		meleeAttack(std::string const &target);
 		void		rangeAttack(std::string const &target);
 
+		void		getHitPoints();
+		void		getEnergyPoints();
+		void		getLevel();
+
 	protected:
 		int			_hitPoints;
 		int			_maxHitPoints;

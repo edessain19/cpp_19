@@ -7,7 +7,7 @@
 int		main()
 {
 	ScavTrap pokemon("Salamèche");
-	FragTrap pokemon2("Salamèche");
+	FragTrap pokemon2("bulbizar");
 
     pokemon.getHitPoints();
     pokemon.rangeAttack("Chrysacier");
@@ -26,7 +26,7 @@ int		main()
     pokemon.challengeNewcomer();
     sleep(1);
 	pokemon.challengeNewcomer();
-	std::cout << "____________________________________________\n";
+	std::cout << "\n\n____________________________________________\n\n";
     pokemon2.getHitPoints();
     pokemon2.rangeAttack("Chrysacier");
     pokemon2.meleeAttack("Paras");

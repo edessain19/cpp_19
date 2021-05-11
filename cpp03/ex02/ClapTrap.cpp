@@ -43,15 +43,29 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& copy)
 ** MEMBER FUNCTIONS
 */
 
+void	ClapTrap::getHitPoints()
+{
+	std::cout << "Cl4G-TP " << _name << " has " << _hitPoints << " hit points" << std::endl;
+}
+
+void	ClapTrap::getEnergyPoints()
+{
+	std::cout << "Cl4G-TP " << _name << " has " << _energyPoints << " energy points" << std::endl;
+}
+
+void	ClapTrap::getLevel()
+{
+	std::cout << "Cl4G-TP " << _name << " is level" << _level << std::endl;
+}
 
 void	ClapTrap::rangeAttack(std::string const &target)
 {
-	std::cout << "FR4G-TP " << _name << " attacks " << target << " from a distance, causing " << _rangedDamage << " damages !" << std::endl;
+	std::cout << "Cl4G-TP " << _name << " attacks " << target << " from a distance, causing " << _rangedDamage << " damages !" << std::endl;
 }
 
 void	ClapTrap::meleeAttack(std::string const &target)
 {
-	std::cout << "FR4G-TP " << _name << " attacks " << target << " in melee, causing " << _meleeDamage << " damages !" << std::endl;
+	std::cout << "Cl4G-TP " << _name << " attacks " << target << " in melee, causing " << _meleeDamage << " damages !" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
