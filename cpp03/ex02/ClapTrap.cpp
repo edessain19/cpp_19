@@ -11,10 +11,12 @@ ClapTrap::ClapTrap()
 	std::cout << "constructor of ClapTrap is called" << std::endl;
 }
 
-// ClapTrap::ClapTrap()
-// {
-// 	std::cout << " Overloaded constructors of ClapTrap is called" << std::endl;
-// }
+// COPY
+ClapTrap::ClapTrap(ClapTrap const& copy)
+{
+	*this = copy;
+	std::cout << " Copy of constructors called" << std::endl;
+}
 
 /*
 ** DESTRUCTOR
@@ -34,7 +36,15 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_hitPoints = copy._hitPoints;
+		_maxHitPoints = copy._maxHitPoints;
+		_energyPoints = copy._energyPoints;
+		_maxEnergyPoints = copy._maxEnergyPoints;
+		_level = copy._level;
+		_name = copy._name;
+		_meleeDamage = copy._meleeDamage;
+		_rangedDamage = copy._rangedDamage;
+		_armorReduction = copy._armorReduction;
 	}
 	return *this;
 }

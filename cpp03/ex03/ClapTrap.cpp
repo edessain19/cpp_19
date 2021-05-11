@@ -19,6 +19,12 @@ _maxEnergyPoints(maxenergy), _level(level), _meleeDamage(melee), _rangedDamage(r
 	std::cout << " constructor of ClapTrap is called" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap const& copy)
+{
+	*this = copy;
+	std::cout << " Copy of constructors called" << std::endl;
+}
+
 /*
 ** DESTRUCTOR
 */
@@ -37,7 +43,15 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_hitPoints = copy._hitPoints;
+		_maxHitPoints = copy._maxHitPoints;
+		_energyPoints = copy._energyPoints;
+		_maxEnergyPoints = copy._maxEnergyPoints;
+		_level = copy._level;
+		_name = copy._name;
+		_meleeDamage = copy._meleeDamage;
+		_rangedDamage = copy._rangedDamage;
+		_armorReduction = copy._armorReduction;
 	}
 	return *this;
 }
@@ -49,6 +63,21 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& copy)
 std::string ClapTrap::getName() const
 {
 	return (_name);
+}
+
+void	ClapTrap::getHitPoints()
+{
+	std::cout << "Cl4G-TP " << _name << " has " << _hitPoints << " hit points" << std::endl;
+}
+
+void	ClapTrap::getEnergyPoints()
+{
+	std::cout << "Cl4G-TP " << _name << " has " << _energyPoints << " energy points" << std::endl;
+}
+
+void	ClapTrap::getLevel()
+{
+	std::cout << "Cl4G-TP " << _name << " is level" << _level << std::endl;
 }
 
 void	ClapTrap::rangeAttack(std::string const &target)

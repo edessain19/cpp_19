@@ -16,15 +16,14 @@ ScavTrap::ScavTrap(std::string name):
 ClapTrap(50, 50, 50, 50, 1, 20, 15, 3)
 {
 	_name = name;
-	// _hitPoints = 50;
-	// _maxHitPoints = 50;
-	// _energyPoints = 50;
-	// _maxEnergyPoints = 50;
-	// _level = 1;
-	// _meleeDamage = 20;
-	// _rangedDamage = 15;
-	// _armorReduction = 3;
 	std::cout << " Overloaded constructors of ScavTrap is called" << std::endl;
+}
+
+// COPY
+ScavTrap::ScavTrap(ScavTrap const& copy)
+{
+	*this = copy;
+	std::cout << " Copy of constructors called" << std::endl;
 }
 
 /*
@@ -45,7 +44,15 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_hitPoints = copy._hitPoints;
+		_maxHitPoints = copy._maxHitPoints;
+		_energyPoints = copy._energyPoints;
+		_maxEnergyPoints = copy._maxEnergyPoints;
+		_level = copy._level;
+		_name = copy._name;
+		_meleeDamage = copy._meleeDamage;
+		_rangedDamage = copy._rangedDamage;
+		_armorReduction = copy._armorReduction;
 	}
 	return *this;
 }
@@ -54,20 +61,6 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& copy)
 ** MEMBER FUNCTIONS
 */
 
-void	ScavTrap::getHitPoints()
-{
-	std::cout << "SC4G-TP " << _name << " has " << _hitPoints << " hit points" << std::endl;
-}
-
-void	ScavTrap::getEnergyPoints()
-{
-	std::cout << "SC4G-TP " << _name << " has " << _energyPoints << " energy points" << std::endl;
-}
-
-void	ScavTrap::getLevel()
-{
-	std::cout << "SC4G-TP " << _name << " is level" << _level << std::endl;
-}
 
 void	ScavTrap::challengeNewcomer()
 {

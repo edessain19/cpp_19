@@ -18,6 +18,13 @@ ClapTrap(100, 100, 100, 100, 1, 30, 20, 5)
 	std::cout << " Overloaded constructors of FragTrap is called" << std::endl;
 }
 
+// COPY
+FragTrap::FragTrap(FragTrap const& copy)
+{
+	*this = copy;
+	std::cout << " Copy of constructors called" << std::endl;
+}
+
 /*
 ** DESTRUCTOR
 */
@@ -36,7 +43,15 @@ FragTrap& FragTrap::operator=(FragTrap const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_hitPoints = copy._hitPoints;
+		_maxHitPoints = copy._maxHitPoints;
+		_energyPoints = copy._energyPoints;
+		_maxEnergyPoints = copy._maxEnergyPoints;
+		_level = copy._level;
+		_name = copy._name;
+		_meleeDamage = copy._meleeDamage;
+		_rangedDamage = copy._rangedDamage;
+		_armorReduction = copy._armorReduction;
 	}
 	return *this;
 }
@@ -44,20 +59,6 @@ FragTrap& FragTrap::operator=(FragTrap const& copy)
 /*
 ** MEMBER FUNCTIONS
 */
-void	FragTrap::getHitPoints()
-{
-	std::cout << "FR4G-TP " << _name << " has " << _hitPoints << " hit points" << std::endl;
-}
-
-void FragTrap::getEnergyPoints()
-{
-	std::cout << "FR4G-TP " << _name << " has " << _energyPoints << " energy points" << std::endl;
-}
-
-void FragTrap::getLevel()
-{
-	std::cout << "FR4G-TP " << _name << " is level" << _level << std::endl;
-}
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
