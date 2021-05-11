@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(int hitpoints, int maxpoints, int energy, int maxenergy,
 _hitPoints(hitpoints), _maxHitPoints(maxpoints), _energyPoints(energy),
 _maxEnergyPoints(maxenergy), _level(level), _meleeDamage(melee), _rangedDamage(range), _armorReduction(armor)
 {
-	std::cout << " constructor of ClapTrap is called" << std::endl;
+	std::cout << "overloaded constructor of ClapTrap is called" << std::endl;
 }
 
 // COPY
