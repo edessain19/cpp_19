@@ -12,17 +12,9 @@ ClapTrap()
 }
 
 FragTrap::FragTrap(std::string name):
-ClapTrap()
+ClapTrap(100, 100, 100, 100, 1, 30, 20, 5)
 {
 	_name = name;
-	_hitPoints = 100;
-	_maxHitPoints = 100;
-	_energyPoints = 100;
-	_maxEnergyPoints = 100;
-	_level = 1;
-	_meleeDamage = 30;
-	_rangedDamage = 20;
-	_armorReduction = 5;
 	std::cout << " Overloaded constructors of FragTrap is called" << std::endl;
 }
 

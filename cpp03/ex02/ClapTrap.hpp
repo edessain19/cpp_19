@@ -9,6 +9,8 @@ class ClapTrap
 {
 	public:
 		ClapTrap();
+		ClapTrap(int hitpoints, int maxpoints, int energy, int maxenergy,
+			int level, int melee, int range, int armor);
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const& copy);
 		~ClapTrap();

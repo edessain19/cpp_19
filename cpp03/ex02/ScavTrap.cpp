@@ -13,18 +13,9 @@ ClapTrap()
 }
 
 ScavTrap::ScavTrap(std::string name): 
-ClapTrap()
+ClapTrap(50, 50, 50, 50, 1, 20, 15, 3)
 {
 	_name = name;
-	_hitPoints = 50;
-	_maxHitPoints = 50;
-	_energyPoints = 50;
-	_maxEnergyPoints = 50;
-	_level = 1;
-	_meleeDamage = 20;
-	_rangedDamage = 15;
-	_armorReduction = 3;
-	
 	std::cout << " Overloaded constructors of ScavTrap is called" << std::endl;
 }
 

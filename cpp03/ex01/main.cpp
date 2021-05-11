@@ -25,7 +25,7 @@ int		main()
     pokemon.challengeNewcomer();
     sleep(1);
 	pokemon.challengeNewcomer();
-	std::cout << "\n\n____________________________________________\n\n";
+	std::cout << "\n____________________________________________\n\n";
     pokemon2.getHitPoints();
     pokemon2.rangeAttack("Chrysacier");
     pokemon2.meleeAttack("Paras");
