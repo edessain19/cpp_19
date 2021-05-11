@@ -18,10 +18,11 @@ FragTrap::FragTrap(std::string name): _name(name), _hitPoints(100), _maxHitPoint
 }
 
 // COPY
-// FragTrap::FragTrap(FragTrap const& copy)
-// {
-// 	std::cout << " Copy of constructors called" << std::endl;
-// }
+FragTrap::FragTrap(FragTrap const& copy)
+{
+	*this = copy;
+	std::cout << " Copy of constructors called" << std::endl;
+}
 
 /*
 ** DESTRUCTOR
@@ -41,7 +42,15 @@ FragTrap& FragTrap::operator=(FragTrap const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_hitPoints = copy._hitPoints;
+		_maxHitPoints = copy._maxHitPoints;
+		_energyPoints = copy._energyPoints;
+		_maxEnergyPoints = copy._maxEnergyPoints;
+		_level = copy._level;
+		_name = copy._name;
+		_meleeDamage = copy._meleeDamage;
+		_rangedDamage = copy._rangedDamage;
+		_armorReduction = copy._armorReduction;
 	}
 	return *this;
 }
@@ -107,7 +116,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 		return ;
 	}
 	_energyPoints -= 25;
-	srand(time(NULL)); //If srand not initialized, random name will always be the same
+	srand(time(NULL));
 	random = rand() % 5 + 0;
 	std::cout << _name << " attacks " << target << " with '" << attacks[random][0] << "' causing " << attacks[random][1] << " points of damage " << std::endl;
 }

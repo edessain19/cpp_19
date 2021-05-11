@@ -89,7 +89,6 @@ std::ostream &operator<<(std::ostream &output_stream, const Fixed &f)
 }
 
 
-///////////////////////////////////////////////////////////////////////////////
 // << >> shifting can be used to change the binary point position.
 // Casting can also be used to set the binary point at a certain position, 
 // if you cast to int you set the binary point to position zero
