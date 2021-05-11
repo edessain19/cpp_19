@@ -9,17 +9,15 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 	public:
 		NinjaTrap();
-		NinjaTrap(std::string);
+		NinjaTrap(std::string name);
+		NinjaTrap(int i);
+		NinjaTrap(NinjaTrap const& copy);
 		~NinjaTrap();
 		NinjaTrap& operator=(NinjaTrap const& copy);
-
-		void		getHitPoints();
-		void		getEnergyPoints();
-		void		getLevel();
 
 		void		ninjaShoebox(NinjaTrap const &target);
 		void		ninjaShoebox(ClapTrap const &target);

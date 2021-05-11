@@ -7,15 +7,16 @@
 
 // DEFAULT
 SuperTrap::SuperTrap():
-ClapTrap()
+FragTrap(), NinjaTrap()
 {
 	std::cout << "constructor of SuperTrap is called" << std::endl;
 }
 
 SuperTrap::SuperTrap(std::string name):
-ClapTrap(100, 100, 120, 120, 1, 60, 20, 5)
+FragTrap(1), NinjaTrap(1)
 {
 	_name = name;
+	_level = 1;
 	std::cout << "overload constructor of SuperTrap is called" << std::endl;
 }
 
@@ -25,7 +26,7 @@ ClapTrap(100, 100, 120, 120, 1, 60, 20, 5)
 
 SuperTrap::~SuperTrap()
 {
-	
+	std::cout << " Destructor of SuperTrap is called" << std::endl;
 }
 
 /*
@@ -37,7 +38,15 @@ SuperTrap& SuperTrap::operator=(SuperTrap const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_hitPoints = copy._hitPoints;
+		_maxHitPoints = copy._maxHitPoints;
+		_energyPoints = copy._energyPoints;
+		_maxEnergyPoints = copy._maxEnergyPoints;
+		_level = copy._level;
+		_name = copy._name;
+		_meleeDamage = copy._meleeDamage;
+		_rangedDamage = copy._rangedDamage;
+		_armorReduction = copy._armorReduction;
 	}
 	return *this;
 }
@@ -46,17 +55,57 @@ SuperTrap& SuperTrap::operator=(SuperTrap const& copy)
 ** MEMBER FUNCTIONS
 */
 
-void	SuperTrap::getHitPoints()
+std::string SuperTrap::getname(void) const
 {
-	std::cout << "SUPER-TP " << _name << " has " << _hitPoints << " hit points" << std::endl;
+	return this->_name;
 }
 
-void	SuperTrap::getEnergyPoints()
+int SuperTrap::getHitPoint( void ) const
 {
-	std::cout << "SUPER-TP " << _name << " has " << _energyPoints << " energy points" << std::endl;
+	return this->_hitPoints;
 }
 
-void	SuperTrap::getLevel()
+int SuperTrap::getMaxHitPoint( void ) const
 {
-	std::cout << "SUPER-TP " << _name << " is level" << _level << std::endl;
+	return this->_maxHitPoints;
+}
+
+int SuperTrap::getEnergyPoint( void ) const
+{
+	return this->_energyPoints;
+}
+
+int SuperTrap::getMaxEnergyPoint( void ) const
+{
+	return this->_maxEnergyPoints;
+}
+
+int SuperTrap::getLevel( void ) const
+{
+	return this->_level;
+}
+
+int SuperTrap::getMeleeDamage( void ) const
+{
+	return this->_meleeDamage;
+}
+
+int SuperTrap::getRangedDamage( void ) const
+{
+	return this->_rangedDamage;
+}
+
+int SuperTrap::getArmorReduction( void ) const
+{
+	return this->_armorReduction;
+}
+
+void SuperTrap::rangedAttack(std::string const & target)
+{
+	FragTrap::rangeAttack(target);
+}
+
+void SuperTrap::meleeAttack(std::string const & target)
+{
+	NinjaTrap::meleeAttack(target);
 }

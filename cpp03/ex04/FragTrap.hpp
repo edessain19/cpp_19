@@ -8,17 +8,16 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap();
 		FragTrap(std::string name);
+		FragTrap(int i);
+		FragTrap(FragTrap const& copy);
 		~FragTrap();
 		FragTrap& operator=(FragTrap const& copy);
 
-		void		getHitPoints();
-		void		getEnergyPoints();
-		void		getLevel();
 		void		vaulthunter_dot_exe(std::string const & target);
 };
 

@@ -13,7 +13,8 @@ class NinjaTrap : public ClapTrap
 {
 	public:
 		NinjaTrap();
-		NinjaTrap(std::string);
+		NinjaTrap(std::string name);
+		NinjaTrap(NinjaTrap const& copy);
 		~NinjaTrap();
 		NinjaTrap& operator=(NinjaTrap const& copy);
 

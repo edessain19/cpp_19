@@ -19,6 +19,7 @@ _maxEnergyPoints(maxenergy), _level(level), _meleeDamage(melee), _rangedDamage(r
 	std::cout << " constructor of ClapTrap is called" << std::endl;
 }
 
+// COPY
 ClapTrap::ClapTrap(ClapTrap const& copy)
 {
 	*this = copy;

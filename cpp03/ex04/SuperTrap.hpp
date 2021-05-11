@@ -7,6 +7,7 @@
 
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
+# include "ClapTrap.hpp"
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {
@@ -15,11 +16,19 @@ class SuperTrap : public FragTrap, public NinjaTrap
 		SuperTrap(std::string name);
 		virtual ~SuperTrap();
 		SuperTrap& operator=(SuperTrap const& copy);
+		
+		std::string getname( void ) const;
+		int getHitPoint( void ) const;
+		int getMaxHitPoint( void ) const;
+		int getEnergyPoint( void ) const;
+		int getMaxEnergyPoint( void ) const;
+		int getLevel( void ) const;
+		int getMeleeDamage( void ) const;
+		int getRangedDamage( void ) const;
+		int getArmorReduction( void ) const;
 
-		void		getHitPoints();
-		void		getEnergyPoints();
-		void		getLevel();
-
+		void rangedAttack(std::string const & target);
+		void meleeAttack(std::string const & target);
 
 };
 

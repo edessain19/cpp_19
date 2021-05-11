@@ -11,12 +11,25 @@ ClapTrap::ClapTrap()
 	std::cout << "constructor of ClapTrap is called" << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string name): _hitPoints(0), _maxHitPoints(0), _energyPoints(0),
+_maxEnergyPoints(0), _level(0), _meleeDamage(0), _rangedDamage(0), _armorReduction(0), _name(name)
+{
+	std::cout << "constructor of ClapTrap is called" << std::endl;
+}
+
 ClapTrap::ClapTrap(int hitpoints, int maxpoints, int energy, int maxenergy,
 	int level, int melee, int range, int armor):
 _hitPoints(hitpoints), _maxHitPoints(maxpoints), _energyPoints(energy),
 _maxEnergyPoints(maxenergy), _level(level), _meleeDamage(melee), _rangedDamage(range), _armorReduction(armor)
 {
 	std::cout << " constructor of ClapTrap is called" << std::endl;
+}
+
+// COPY
+ClapTrap::ClapTrap(ClapTrap const& copy)
+{
+	*this = copy;
+	std::cout << " Copy of constructors called" << std::endl;
 }
 
 /*
@@ -49,6 +62,21 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& copy)
 std::string ClapTrap::getName() const
 {
 	return (_name);
+}
+
+void	ClapTrap::getHitPoints()
+{
+	std::cout << "Cl4G-TP " << _name << " has " << _hitPoints << " hit points" << std::endl;
+}
+
+void	ClapTrap::getEnergyPoints()
+{
+	std::cout << "Cl4G-TP " << _name << " has " << _energyPoints << " energy points" << std::endl;
+}
+
+void	ClapTrap::getLevel()
+{
+	std::cout << "Cl4G-TP " << _name << " is level" << _level << std::endl;
 }
 
 void	ClapTrap::rangeAttack(std::string const &target)

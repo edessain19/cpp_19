@@ -16,15 +16,14 @@ NinjaTrap::NinjaTrap(std::string name):
 ClapTrap(60, 60, 120, 120, 1, 60, 5, 0)
 {
 	_name = name;
-	// _hitPoints = 60;
-	// _maxHitPoints = 60;
-	// _energyPoints = 120;
-	// _maxEnergyPoints = 120;
-	// _level = 1;
-	// _meleeDamage = 60;
-	// _rangedDamage = 5;
-	// _armorReduction = 0;
 	std::cout << " Overloaded constructors of NinjaTrap is called" << std::endl;
+}
+
+// COPY
+NinjaTrap::NinjaTrap(NinjaTrap const& copy)
+{
+	*this = copy;
+	std::cout << " Copy of constructors called" << std::endl;
 }
 
 /*
@@ -45,7 +44,15 @@ NinjaTrap& NinjaTrap::operator=(NinjaTrap const& copy)
 {
 	if (this != &copy)
 	{
-		
+		_hitPoints = copy._hitPoints;
+		_maxHitPoints = copy._maxHitPoints;
+		_energyPoints = copy._energyPoints;
+		_maxEnergyPoints = copy._maxEnergyPoints;
+		_level = copy._level;
+		_name = copy._name;
+		_meleeDamage = copy._meleeDamage;
+		_rangedDamage = copy._rangedDamage;
+		_armorReduction = copy._armorReduction;
 	}
 	return *this;
 }

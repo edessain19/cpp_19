@@ -13,12 +13,10 @@ class ScavTrap : public ClapTrap
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const& copy);
 		~ScavTrap();
 		ScavTrap& operator=(ScavTrap const& copy);
 
-		void		getHitPoints();
-		void		getEnergyPoints();
-		void		getLevel();
 		void		challengeNewcomer();
 };
 
