@@ -11,7 +11,7 @@ class Victim
 		Victim();
 		Victim(std::string name);
 		Victim(Victim const& copy);
-		~Victim();
+		virtual ~Victim();
 		Victim& operator=(Victim const& copy);
 
 		void			introduction(void) const;

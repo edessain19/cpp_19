@@ -12,7 +12,7 @@ class Wolf : public Victim
 	public:
 		Wolf(std::string name);
 		Wolf(Wolf const& copy);
-		~Wolf();
+		virtual ~Wolf();
 		Wolf& operator=(Wolf const& copy);
 
 		void getPolymorphed(void) const;

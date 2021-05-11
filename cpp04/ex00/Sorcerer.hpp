@@ -10,7 +10,6 @@
 class Sorcerer
 {
 	public:
-		Sorcerer();
 		Sorcerer(std::string name, std::string title);
 		Sorcerer(Sorcerer const& copy);
 		~Sorcerer();
@@ -20,6 +19,7 @@ class Sorcerer
 		void	polymorph(Victim const& copy) const;
 
 	private:
+		Sorcerer();
 		std::string		_name;
 		std::string		_title;
 };
