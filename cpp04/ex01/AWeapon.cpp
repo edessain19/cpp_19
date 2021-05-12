@@ -7,6 +7,11 @@
 
 // DEFAULT
 
+AWeapon::AWeapon()
+{
+	
+}
+
 AWeapon::AWeapon(std::string name, int cost, int damage) : _name(name), _cost(cost), _damage(damage)
 {
 

@@ -6,10 +6,7 @@
 */
 
 // DEFAULT
-ElderWand::ElderWand() : AWeapon("Elder Wand", 10, 400)
-{
-	
-}
+ElderWand::ElderWand() : AWeapon("Elder Wand", 10, 400) {}
 
 // COPY
 ElderWand::ElderWand(ElderWand const& copy)
@@ -21,10 +18,7 @@ ElderWand::ElderWand(ElderWand const& copy)
 ** DESTRUCTOR
 */
 
-ElderWand::~ElderWand()
-{
-	
-}
+ElderWand::~ElderWand() {}
 
 /*
 ** OPERATORS

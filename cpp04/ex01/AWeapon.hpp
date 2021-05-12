@@ -8,6 +8,7 @@
 class AWeapon
 {
 	public:
+		AWeapon();
 		AWeapon(std::string name, int cost, int damage);
 		AWeapon(AWeapon const& copy);
 		virtual ~AWeapon();
