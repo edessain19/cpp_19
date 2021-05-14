@@ -60,17 +60,17 @@ void Character::equip(AWeapon *weapon)
 	_weapon = weapon;
 }
 
-void Character::attack(Enemy *copy)
+void Character::attack(Enemy *enemy)
 {
 	if (_weapon && _ap >= _weapon->getAPCost())
 	{
-		std::cout << this->_name << " attacks " << copy->getType()
+		std::cout << _name << " attacks " << enemy->getType()
 				  << " with a " << _weapon->getName() << std::endl;
 		_weapon->attack();
 		_ap -= _weapon->getAPCost();
-		copy->takeDamage(_weapon->getDamage());
-		if (copy->getHP() <= 0)
-			delete copy;
+		enemy->takeDamage(_weapon->getDamage());
+		if (enemy->getHP() <= 0)
+			delete enemy;
 	}
 }
 
@@ -89,8 +89,8 @@ void Character::introduction(void) const
 		std::cout << " and wields a " << _weapon->getName() << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &flux, Character const &other)
+std::ostream &operator<<(std::ostream &flux, Character const &copy)
 {
-	other.introduction();
+	copy.introduction();
 	return (flux);
 }

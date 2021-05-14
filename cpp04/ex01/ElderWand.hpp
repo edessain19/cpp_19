@@ -14,6 +14,7 @@ class ElderWand : public AWeapon
 		ElderWand(ElderWand const& copy);
 		virtual ~ElderWand();
 		ElderWand& operator=(ElderWand const& copy);
+		
 		virtual void attack(void) const;
 	private:
 

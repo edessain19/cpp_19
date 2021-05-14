@@ -27,10 +27,7 @@ AWeapon::AWeapon(AWeapon const& copy) : _name(copy._name), _cost(copy._cost), _d
 ** DESTRUCTOR
 */
 
-AWeapon::~AWeapon()
-{
-	
-}
+AWeapon::~AWeapon() {}
 
 /*
 ** OPERATORS

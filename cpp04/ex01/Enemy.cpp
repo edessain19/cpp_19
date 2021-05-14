@@ -18,10 +18,11 @@ Enemy::Enemy(int hp, std::string type) : _hp(hp), _type(type)
 }
 
 // COPY
-// Enemy::Enemy(Enemy const& copy)
-// {
-	
-// }
+Enemy::Enemy(Enemy const& copy)
+{
+	_hp = copy._hp;
+	_type = copy._type;
+}
 
 /*
 ** DESTRUCTOR
@@ -70,6 +71,6 @@ void Enemy::takeDamage(int damage)
 
 std::ostream &operator<<(std::ostream &flux, Enemy const& copy)
 {
-	flux << copy.getType() << " has " << copy.getHP() << " hp";
+	flux << copy.getType() << " has " << copy.getHP() << " hp" << std::endl;
 	return (flux);
 }

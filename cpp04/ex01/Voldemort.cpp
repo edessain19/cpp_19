@@ -23,7 +23,7 @@ Voldemort::Voldemort() : Enemy(800, "Black Magician")
 
 Voldemort::~Voldemort()
 {
-	std::cout << "* fraaaaaaaaa *" << std::endl;
+	std::cout << "* fraaaaaaaaa *" << std::endl << "The Black Magician is dead"  << std::endl;
 }
 
 /*
