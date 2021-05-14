@@ -12,10 +12,11 @@ TacticalMarine::TacticalMarine()
 }
 
 // COPY
-// TacticalMarine::TacticalMarine(TacticalMarine const& copy)
-// {
-	
-// }
+TacticalMarine::TacticalMarine(TacticalMarine const& copy)
+{
+	std::cout << "Tactical Marine ready for battle!" << std::endl;
+	(void)copy;
+}
 
 /*
 ** DESTRUCTOR
@@ -31,14 +32,11 @@ TacticalMarine::~TacticalMarine()
 */
 
 // ASSIGNATION
-// TacticalMarine& TacticalMarine::operator=(TacticalMarine const& copy)
-// {
-// 	if (this != &copy)
-// 	{
-		
-// 	}
-// 	return *this;
-// }
+TacticalMarine& TacticalMarine::operator=(TacticalMarine const& copy)
+{
+	(void)copy;
+	return *this;
+}
 
 /*
 ** MEMBER FUNCTIONS

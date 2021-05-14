@@ -12,10 +12,11 @@ AssaultTerminator::AssaultTerminator()
 }
 
 // COPY
-// AssaultTerminator::AssaultTerminator(AssaultTerminator const& copy)
-// {
-	
-// }
+AssaultTerminator::AssaultTerminator(AssaultTerminator const& copy)
+{
+	(void)copy;
+	std::cout << "* teleports from space *" << std::endl;
+}
 
 /*
 ** DESTRUCTOR
@@ -31,14 +32,11 @@ AssaultTerminator::~AssaultTerminator()
 */
 
 // ASSIGNATION
-// AssaultTerminator& AssaultTerminator::operator=(AssaultTerminator const& copy)
-// {
-// 	if (this != &copy)
-// 	{
-		
-// 	}
-// 	return *this;
-// }
+AssaultTerminator& AssaultTerminator::operator=(AssaultTerminator const& copy)
+{
+	(void)copy;
+	return *this;
+}
 
 /*
 ** MEMBER FUNCTIONS
