@@ -18,7 +18,7 @@ int main()
   std::cout << *Georges;
 
   std::cout << "Decrementing bob's grade 111 times" << std::endl;
-  for (int i = 0; i < 100; i++)
+  for (int i = 0; i < 111; i++)
     bob->decGrade();
   std::cout << *bob;
   std::cout << "Incrementing bob's grade 150times" << std::endl;
