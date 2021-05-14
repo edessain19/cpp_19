@@ -87,7 +87,7 @@ ISpaceMarine*	Squad::getUnit(int n) const
 	return (iter->_unit);
 }
 
-squadList *Squad::getLast()
+squadList *Squad::getLast(squadList *_squadList)
 {
 	squadList *iter;
 
@@ -99,7 +99,7 @@ squadList *Squad::getLast()
 	return (iter);
 }
 
-int Squad::onlyOnce(ISpaceMarine *aMarine)
+int Squad::onlyOnce(squadList *_squadList, ISpaceMarine *aMarine)
 {
 	squadList *iter;
 
@@ -119,9 +119,9 @@ int Squad::push(ISpaceMarine* aMarine)
 {
 	squadList	*iter;
 
-	if (aMarine && Squad::onlyOnce(aMarine))
+	if (aMarine && Squad::onlyOnce(this->_squadList, aMarine))
 	{
-		iter = Squad::getLast();
+		iter = Squad::getLast(this->_squadList);
 		if (iter && iter->_unit)
 		{
 			iter->_next = new squadList;

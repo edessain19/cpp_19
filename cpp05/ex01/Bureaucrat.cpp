@@ -104,7 +104,7 @@ std::ostream& operator<<(std::ostream& flux, Bureaucrat const& copy)
 typedef Bureaucrat::GradeTooHighException GTHE;
 typedef Bureaucrat::GradeTooLowException GTLE;
 
-const char *GTLE::what(void) const throw()
+const char *GTLE::what() const throw()
 {
 	std::cerr << "The grade is bigger than 150" << std::endl;
 	return (0);

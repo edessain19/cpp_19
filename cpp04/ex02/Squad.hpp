@@ -27,12 +27,13 @@ class Squad : public ISquad
 		ISpaceMarine* getUnit(int) const;
 		int push(ISpaceMarine*);
 
-		int onlyOnce(ISpaceMarine * aMarine);
-		squadList *getLast();
+		int onlyOnce(squadList *_squadList, ISpaceMarine *aMarine);
+		squadList *getLast(squadList *_squadList);
 
 	private:
 		int 		_unitNbr;
 		squadList 	*_squadList;
+		// ISpaceMarine 	**_squad;
 
 };
 
