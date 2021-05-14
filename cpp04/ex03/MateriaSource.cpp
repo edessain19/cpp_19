@@ -58,14 +58,14 @@ MateriaSource& MateriaSource::operator=(MateriaSource const& copy)
 ** MEMBER FUNCTIONS
 */
 
-void MateriaSource::learnMateria(AMateria* other)
+void MateriaSource::learnMateria(AMateria* copy)
 {
 	int i = -1;
 
 	while(++i < 4 && _materia[i])
 		;
-	if (i < 4 && other)
-		_materia[i] = other->clone();
+	if (i < 4 && copy)
+		_materia[i] = copy->clone();
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
