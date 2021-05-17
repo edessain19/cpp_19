@@ -16,26 +16,26 @@ int main()
     Bureaucrat *Jack = new Bureaucrat("Jack", 148);
 
     std::cout << *bob;
-    std::cout << *Jack;
-    std::cout << "~Trying to execute an unsigned form" << std::endl;
+    std::cout << *Jack << std::endl;
+    std::cout << "~~~~Trying to execute an unsigned form" << std::endl;
     bob->executeForm(*test);
 
-    std::cout << "~Low grade jack trying to sign forms" << std::endl;
+    std::cout << std::endl << "~~~~Low grade jack trying to sign forms" << std::endl;
     test->beSigned(*Jack);
     test1->beSigned(*Jack);
     test2->beSigned(*Jack);
 
-    std::cout << "~Signing all the forms" << std::endl;
+    std::cout << std::endl << "~~~~Signing all the forms" << std::endl << std::endl;
     test->beSigned(*bob);
     test1->beSigned(*bob);
     test2->beSigned(*bob);
 
-    std::cout << "~Low grade jack trying to execute forms" << std::endl;
+    std::cout << std::endl << "~~~~Low grade jack trying to execute forms" << std::endl;
     Jack->executeForm(*test);
     Jack->executeForm(*test1);
     Jack->executeForm(*test2);
 
-    std::cout << "~High grade bob trying to execute forms" << std::endl;
+    std::cout << std::endl<< "~~~~High grade bob trying to execute forms" << std::endl;
     bob->executeForm(*test);
     bob->executeForm(*test1);
     bob->executeForm(*test2);
