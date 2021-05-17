@@ -29,7 +29,7 @@ Form *Intern::makeForm(std::string const &form_name, std::string const &form_tar
   //Structures takes in name and appropriate function pointer to create the form
   t_form forms[3] = {{"shrubbery creation", &makeShrubberyCreationForm}, {"robotomy request", &makeRobotomyRequestForm}, {"presidential pardon", &makePresidentialForm}};
 
-  for (int i = 0; i < 3; i++) //We loop throug the struct using an index (possible in c++)
+  for (int i = 0; i < 3; i++)
   {
     if (forms[i].name == form_name)
     {

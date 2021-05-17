@@ -37,7 +37,7 @@ class Form
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			int warning;
+			// int warning;
 			const char *what(void) const throw();
 	};
 	class GradeTooLowException : public std::exception

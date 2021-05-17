@@ -52,8 +52,15 @@ void	convertStr(std::string str)
         i++;
     if (str[i] == '\0')
     {
-        cast_int(std::stoi(str));
-        return ;
+        try
+		{
+			cast_int(std::stoi(str));
+		}
+		catch (const std::exception &e)
+		{
+			cast_double(std::stod(str));
+		}
+		return ;
     }
 	if (str[i] == '.')
         i++;
@@ -61,7 +68,14 @@ void	convertStr(std::string str)
         i++;
     if (str[i] == '\0')
     {
-        cast_int(std::stoi(str));
+        try
+		{
+			cast_int(std::stoi(str));
+		}
+		catch (const std::exception &e)
+		{
+			cast_double(std::stod(str));
+		}
         return ;
     }
 

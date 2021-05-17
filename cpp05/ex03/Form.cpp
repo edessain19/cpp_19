@@ -20,10 +20,7 @@ Form::Form(Form const& copy)
 ** DESTRUCTOR
 */
 
-Form::~Form()
-{
-	
-}
+Form::~Form() {}
 
 /*
 ** OPERATORS

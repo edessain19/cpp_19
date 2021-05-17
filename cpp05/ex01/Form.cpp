@@ -42,12 +42,12 @@ Form& Form::operator=(Form const& copy)
 
 void operator<<(std::ostream &stream, Form &F)
 {
-  stream << "The form " << F.getName();
-  if (F.getSigne() == true)
-    stream << " is signed, ";
-  else
-    stream << " is not signed, ";
-  stream << "grade to sign: " << F.getGrade_sign() << ", grade to execute: " << F.getGrade_exec() << std::endl;
+	stream << "The form " << F.getName();
+	if (F.getSigne() == true)
+		stream << " is signed, ";
+  	else
+		stream << " is not signed, ";
+  	stream << "grade to sign: " << F.getGrade_sign() << ", grade to execute: " << F.getGrade_exec() << std::endl;
 }
 
 /*

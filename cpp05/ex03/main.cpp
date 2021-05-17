@@ -24,12 +24,12 @@ int main()
     f4 = bill.makeForm("efefewfefe", "f3");
     std::cout << f4 << std::endl;
 
-    std::cout << "~Sign forms" << std::endl;
+    std::cout << "~~~Sign forms" << std::endl;
     f1->beSigned(bob);
     f2->beSigned(bob);
     f3->beSigned(bob);
 
-    std::cout << "~Execute forms" << std::endl;
+    std::cout << "~~~Execute forms" << std::endl;
     bob.executeForm(*f1);
     bob.executeForm(*f2);
     bob.executeForm(*f3);

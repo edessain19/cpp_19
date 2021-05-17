@@ -21,10 +21,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const& copy)
 ** DESTRUCTOR
 */
 
-Bureaucrat::~Bureaucrat()
-{
-	
-}
+Bureaucrat::~Bureaucrat() {}
 
 /*
 ** OPERATORS

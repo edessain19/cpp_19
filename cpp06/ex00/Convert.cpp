@@ -7,7 +7,7 @@
 
 void cast_char(char c)
 {
-    std::cout << "char: " << c << std::endl;
+    std::cout << "char: '" << c << "'" << std::endl;
     std::cout << "int: " << static_cast<int>(c) << std::endl;
     std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
     std::cout << "double: " << static_cast<int>(c) << ".0" << std::endl;
@@ -18,7 +18,7 @@ void cast_int(int i)
     if (static_cast<char>(i) < 32 || static_cast<char>(i) > 126)
         std::cout << "char: non displayable" << std::endl;
     else
-        std::cout << "char: " << static_cast<char>(i) << std::endl;
+        std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
     std::cout << "int: " << i << std::endl;
     std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
     std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
@@ -31,7 +31,7 @@ void cast_double(double d)
 	if (static_cast<char>(d) < 32 || static_cast<char>(d) > 126)
 		std::cout << "char: Non displayable" << std::endl;
     else
-        std::cout << "char: " << static_cast<char>(d) << std::endl;
+        std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
     std::cout << "int: " << static_cast<int>(d) << std::endl;
     ss << static_cast<float>(d);
     if (ss.str().find('.') < ss.str().length())
@@ -61,7 +61,7 @@ void cast_float(float f)
 	if (static_cast<char>(f) < 32 || static_cast<char>(f) > 126)
 		std::cout << "char: Non displayable" << std::endl;
 	else
-		std::cout << "char: " << static_cast<char>(f) << std::endl;
+		std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(f) << std::endl;
 	ss << f;
 	if (ss.str().find('.') < ss.str().length())
