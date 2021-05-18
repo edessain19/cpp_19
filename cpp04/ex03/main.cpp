@@ -22,6 +22,26 @@ int main()
 
 	me->use(0, *bob);
 	me->use(1, *bob);
+
+	std::cout << "----------------- Other Tests --------------" << std::endl;
+	me->use(42, *bob);
+	tmp = src->createMateria("Or Saphir");
+	me->equip(tmp);
+	me->use(2, *bob);
+	if (tmp == 0)
+		std::cout << "Good because the material 'Or Saphir' Does not exist' " << std::endl;
+
+	std::cout << "----------------- Constructor Copy Test -----------" << std::endl;
+	Character luc("New Bob");
+	Character you(luc);
+
+	me->use(0, you); // Should print New Bob;
+
+	std::cout << "----------------- Assignation Test --------------" << std::endl;
+	Character nyou("Charlie");
+	nyou = luc;
+	me->use(0, nyou); // Should print New Bob;
+
 	
     delete bob;
     delete me;
