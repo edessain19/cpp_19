@@ -29,11 +29,8 @@ class Array
 #endif
 
 template <typename T>
-Array<T>::Array(): _arr(0), _n(0) 
-{
-}
+Array<T>::Array(): _arr(0), _n(0) {}
 
 template<typename T>
-Array<T>::Array(unsigned int n): _arr(new T[n]()), _n(n) 
-{
-}
+Array<T>::Array(unsigned int n): _arr(new T[n]()), _n(n) {}
+
