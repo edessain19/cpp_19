@@ -14,8 +14,8 @@ AssaultTerminator::AssaultTerminator()
 // COPY
 AssaultTerminator::AssaultTerminator(AssaultTerminator const& copy)
 {
-	(void)copy;
 	std::cout << "* teleports from space *" << std::endl;
+	(void)copy;
 }
 
 /*

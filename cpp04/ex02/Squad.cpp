@@ -8,15 +8,33 @@
 // DEFAULT
 Squad::Squad() : _unitNbr(0)
 {
-	_squadList = new squadList;
-	_squadList->_unit = nullptr;
-	_squadList->_next = nullptr;
+	_lst = new squadList;
+	_lst->_unit = 0;
+	_lst->_next = 0;
 }
 
 // COPY
 Squad::Squad(Squad const& copy)
 {
-	*this = copy;
+	_lst = copySquad(copy._lst);
+}
+
+squadList *Squad::copySquad(squadList *copy)
+{
+	squadList *_new;
+
+	_new = new squadList;
+	if (copy && copy->_unit)
+	{
+		_new->_unit = copy->_unit->clone();
+		_new->_next = Squad::copySquad(copy->_next);
+	}
+	else
+	{
+		_new->_unit = 0;
+		_new->_next = 0;
+	}
+	return (_new);
 }
 
 /*
@@ -27,11 +45,11 @@ Squad::~Squad()
 {
 	squadList	*iter;
 
-	while (_squadList != nullptr)
+	while (_lst != nullptr)
 	{
-		delete _squadList->_unit;
-		iter = _squadList;
-		_squadList = _squadList->_next;
+		delete _lst->_unit;
+		iter = _lst;
+		_lst = _lst->_next;
 		delete iter;
 	}
 }
@@ -44,16 +62,16 @@ Squad::~Squad()
 // deepcopy means a copy on another memory address
 Squad& Squad::operator=(Squad const& copy)
 {
-	while (_squadList != nullptr)
+	while (_lst != nullptr)
 	{
-		delete _squadList->_unit;
-		_squadList = _squadList->_next;
+		delete _lst->_unit;
+		_lst = _lst->_next;
 	}
-	_squadList = new squadList;
-	_squadList->_unit = nullptr;
-	_squadList->_next = nullptr;
+	_lst = new squadList;
+	_lst->_unit = nullptr;
+	_lst->_next = nullptr;
 	squadList *iter;
-	iter = copy._squadList;
+	iter = copy._lst;
 	while (iter != nullptr)
 	{
 		push(iter->_unit->clone());
@@ -76,8 +94,8 @@ ISpaceMarine*	Squad::getUnit(int n) const
 	int i = 0;
 	squadList	*iter;
 
-	iter = _squadList;
-	while (i < n && iter && _squadList->_next)
+	iter = _lst;
+	while (i < n && iter && _lst->_next)
 	{
 		iter = iter->_next;
 		i++;
@@ -87,11 +105,11 @@ ISpaceMarine*	Squad::getUnit(int n) const
 	return (iter->_unit);
 }
 
-squadList *Squad::getLast(squadList *_squadList)
+squadList *Squad::getLast(squadList *_lst)
 {
 	squadList *iter;
 
-	iter = _squadList;
+	iter = _lst;
 	while (iter && iter->_next)
 	{
 		iter = iter->_next;
@@ -99,11 +117,11 @@ squadList *Squad::getLast(squadList *_squadList)
 	return (iter);
 }
 
-int Squad::onlyOnce(squadList *_squadList, ISpaceMarine *aMarine)
+int Squad::onlyOnce(squadList *_lst, ISpaceMarine *aMarine)
 {
 	squadList *iter;
 
-	iter = _squadList;
+	iter = _lst;
 	if (!aMarine)
 		return (0);
 	while (iter)
@@ -119,9 +137,9 @@ int Squad::push(ISpaceMarine* aMarine)
 {
 	squadList	*iter;
 
-	if (aMarine && Squad::onlyOnce(this->_squadList, aMarine))
+	if (aMarine && Squad::onlyOnce(this->_lst, aMarine))
 	{
-		iter = Squad::getLast(this->_squadList);
+		iter = Squad::getLast(this->_lst);
 		if (iter && iter->_unit)
 		{
 			iter->_next = new squadList;
@@ -131,8 +149,8 @@ int Squad::push(ISpaceMarine* aMarine)
 		}
 		else
 		{
-			_squadList->_unit = aMarine;
-			_squadList->_next = nullptr;
+			_lst->_unit = aMarine;
+			_lst->_next = nullptr;
 		}
 		_unitNbr++;
 	}
