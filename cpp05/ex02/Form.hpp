@@ -32,9 +32,9 @@ class Form
 		int execute(Bureaucrat const & executor) const;
 		virtual void Action() const = 0;
 
-		int ExceptionGrade(int grade) const;
-		bool ExceptionGrade(int grade, int minimum_grade) const;
-		bool ExceptionUnsigned() const;
+		int verifyGrade(int grade) const;
+		bool verifyGrade(int grade, int minimum_grade) const;
+		bool verifySignature() const;
 
 	class GradeTooHighException : public std::exception
 	{

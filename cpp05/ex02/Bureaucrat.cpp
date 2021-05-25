@@ -8,7 +8,7 @@
 // DEFAULT
 Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name)
 {
-	ExceptionGrade(grade);
+	verifyGrade(grade);
 }
 
 // COPY
@@ -41,9 +41,9 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const& copy)
 ** MEMBER FUNCTIONS
 */
 
-void Bureaucrat::ExceptionGrade(int new_grade)
+void Bureaucrat::verifyGrade(int new_grade)
 {
-  try //Try scope contains throw keyword, throw keyword is followed by parameter and linked with catch scope that contains same parameter, in catch scope you can set what you want but usually if exception class is used, its error output function is used
+  try 
   {
     if (new_grade > 150)
       throw GradeTooLowException();
@@ -51,7 +51,7 @@ void Bureaucrat::ExceptionGrade(int new_grade)
       throw GradeTooHighException();
     _grade = new_grade;
   }
-  catch (std::exception &e) //Is catchable by std::exception, as it has the std::exception as parent
+  catch (std::exception &e)
   {
     e.what();
   }
@@ -74,12 +74,12 @@ void Bureaucrat::setGrade(int grade)
 
 void Bureaucrat::incGrade(void)
 {
-	ExceptionGrade(_grade - 1);
+	verifyGrade(_grade - 1);
 }
 
 void Bureaucrat::decGrade(void)
 {
-	ExceptionGrade(_grade + 1);
+	verifyGrade(_grade + 1);
 }
 
 void Bureaucrat::signForm(Form const &form) const

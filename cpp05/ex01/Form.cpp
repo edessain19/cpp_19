@@ -7,7 +7,7 @@
 
 // DEFAULT
 Form::Form(std::string const &name, int gradeSign, int gradeExec) 
-: _name(name), _signe(false), _gradeSign(ExceptionGrade(gradeSign)), _gradeExec(ExceptionGrade(gradeExec)) {}
+: _name(name), _signe(false), _gradeSign(verifyGrade(gradeSign)), _gradeExec(verifyGrade(gradeExec)) {}
 
 // COPY
 Form::Form(Form const& copy)
@@ -76,7 +76,7 @@ int Form::getGrade_exec() const
 
 void Form::beSigned(Bureaucrat const &B)
 {
-  if (ExceptionGrade(B.getGrade(), _gradeSign))
+  if (verifyGrade(B.getGrade(), _gradeSign))
   {
       _signe = true;
       B.signForm(*this);
@@ -85,7 +85,7 @@ void Form::beSigned(Bureaucrat const &B)
     B.signForm(*this);
 }
 
-int Form::ExceptionGrade(int new_grade)
+int Form::verifyGrade(int new_grade)
 {
 	try //Try scope contains throw keyword, throw keyword is followed by parameter and linked with catch scope that contains same parameter, in catch scope you can set what you want but usually if exception class is used, its error output function is used
 	{
@@ -98,16 +98,16 @@ int Form::ExceptionGrade(int new_grade)
 	catch (std::exception &e) //Is catchable by std::exception, as it has the std::exception as parent
 	{
 		e.what();
-		return 1; //If invalid grade set to one so that it does not get executed or signed when it should not
+		return -1;
 	}
 }
 
-bool Form::ExceptionGrade(int grade, int minimum_grade)
+bool Form::verifyGrade(int grade, int minimum_grade)
 {
 	try
 	{
-	if (grade > minimum_grade)
-		throw GradeTooLowException();
+		if (grade > minimum_grade)
+			throw GradeTooLowException();
 	}
 	catch (std::exception &e)
 	{

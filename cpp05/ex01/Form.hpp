@@ -8,7 +8,6 @@
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-//Used to resolve reciprocal include problem
 
 class Form
 {
@@ -30,14 +29,13 @@ class Form
 		int getGrade_exec() const;
 		void beSigned(Bureaucrat const &B);
 		
-		int ExceptionGrade(int grade);
-		bool ExceptionGrade(int grade, int minimum_grade);
+		int verifyGrade(int grade);
+		bool verifyGrade(int grade, int minimum_grade);
 
 
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			// int warning;
 			const char *what(void) const throw();
 	};
 	class GradeTooLowException : public std::exception

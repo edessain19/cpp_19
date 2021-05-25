@@ -23,6 +23,7 @@ class Bureaucrat
 		void setGrade(int grade);
 		void incGrade(void);
 		void decGrade(void);
+		void verifyGrade(int new_grade);
 	
 		class GradeTooHighException : public std::exception
 		{
@@ -35,8 +36,6 @@ class Bureaucrat
 			public:
 				const char *what(void) const throw();
 		};
-		void ExceptionGrade(int new_grade);
-
 };
 
 	std::ostream& operator<<(std::ostream& flux, Bureaucrat const& other);

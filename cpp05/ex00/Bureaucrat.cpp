@@ -8,7 +8,7 @@
 // DEFAULT
 Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name)
 {
-	ExceptionGrade(grade);
+	verifyGrade(grade);
 }
 
 // COPY
@@ -44,7 +44,7 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const& copy)
 ** MEMBER FUNCTIONS
 */
 
-void Bureaucrat::ExceptionGrade(int new_grade)
+void Bureaucrat::verifyGrade(int new_grade)
 {
   try //Try scope contains throw keyword, throw keyword is followed by parameter and linked with catch scope that contains same parameter, in catch scope you can set what you want but usually if exception class is used, its error output function is used
   {
@@ -77,12 +77,12 @@ void Bureaucrat::setGrade(int grade)
 
 void Bureaucrat::incGrade(void)
 {
-	ExceptionGrade(_grade - 1);
+	verifyGrade(_grade - 1);
 }
 
 void Bureaucrat::decGrade(void)
 {
-	ExceptionGrade(_grade + 1);
+	verifyGrade(_grade + 1);
 }
 
 std::ostream& operator<<(std::ostream& flux, Bureaucrat const& copy)

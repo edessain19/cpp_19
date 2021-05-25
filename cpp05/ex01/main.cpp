@@ -5,21 +5,29 @@ int main()
 {
   Form *paper = new Form("paperwork", 57, 23);
   std::cout << *paper;
-  Form *paper1 = new Form("paperwork1", 157, 23); //If out of range grade it is set to 1 so no one that should not can sign it
+  std::cout << std::endl;
+  Form *paper1 = new Form("paperwork1", 157, 23);
   std::cout << *paper1;
+  std::cout << std::endl;
   Form *paper2 = new Form("paperwork2", 23, 0);
   std::cout << *paper2;
+  std::cout << std::endl;
   Form *paper3 = new Form("paperwork3", 444, 0);
   std::cout << *paper3;
+  std::cout << std::endl;
   Bureaucrat *bob = new Bureaucrat("Bob", 57);
   std::cout << *bob;
+  std::cout << std::endl;
   Bureaucrat *Jack = new Bureaucrat("Jack", 145);
   std::cout << *Jack;
+  std::cout << std::endl;
 
   paper->beSigned(*Jack);
   std::cout << *paper;
+  std::cout << std::endl;
   paper->beSigned(*bob);
   std::cout << *paper;
+  std::cout << std::endl;
 
   delete paper;
   delete paper1;
