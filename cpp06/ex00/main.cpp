@@ -8,13 +8,15 @@ bool is_nbr(char c)
     return false;
 }
 
-int		isNotValid(std::string str)
+int		isNotaValid(std::string str)
 {
 	int	nbPoint;
 	
 	nbPoint = 0;
 	for (unsigned long i = 0; i < str.length(); i++)
 	{
+		if (str.length() > 1 && (!isdigit(str[i]) && (str[i] != 'f' && str[i] != '-' && str[i] != '.')))
+			return (1);
 		if (str[i] == '.')
 			nbPoint++;
 		if (nbPoint > 0 && !isdigit(str[i]) && str[i] != '.' && str[i] != 'f')
@@ -27,11 +29,27 @@ int		isNotValid(std::string str)
 	return (0);
 }
 
+int		check_literraux(std::string str)
+{
+	if (str == "nan" || str == "inf" || str == "-inf")
+	{
+		special_double(std::stod(str));
+		return 1;
+	}
+	if (str == "nanf" || str == "inff" || str == "-inff")
+	{
+		special_float(std::stof(str));
+		return 1;
+	}
+	return 0;
+}
+
 void	convertStr(std::string str)
 {
 	int i = 0;
-	
-	if (isNotValid(str))
+	if (check_literraux(str))
+		return ;
+	if (isNotaValid(str))
 	{
 		std::cout << "The entry is not valid" << std::endl;
 		return ;
@@ -88,22 +106,13 @@ void	convertStr(std::string str)
         cast_double(std::stod(str));
         return ;
     }
-	if (str == "nan" || str == "inf" || str == "-inf")
-	{
-		special_double(std::stod(str));
-		return ;
-	}
+	
 
 // ---------- float ? ------------ //
 
 	if ((str[i] == 'f' && str[i + 1] == 0))
 	{
 		cast_float(std::stof(str));
-		return ;
-	}
-	if (str == "nanf" || str == "inff" || str == "-inff")
-	{
-		special_float(std::stof(str));
 		return ;
 	}
 
@@ -131,4 +140,3 @@ int main(int argc, char **argv)
 	else
 		std::cout << "ERROR : This program just take one parameter" << std::endl;
 }
-// attention limite float à 1 charactere
