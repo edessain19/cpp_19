@@ -16,7 +16,7 @@ void cast_char(char c)
 void cast_int(int i)
 {
     if (static_cast<char>(i) < 32 || static_cast<char>(i) > 126)
-        std::cout << "char: non displayable" << std::endl;
+        std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
     std::cout << "int: " << i << std::endl;
