@@ -24,7 +24,7 @@ void test(T & a)
 		std::cout << a[i] << " " << std::endl;
 	try
 	{
-		std::cout << "size =" << a.size() << " elem[5] = " ; 
+		std::cout << "size = " << a.size() << " elem[5] = " ; 
 		a[5];
 	}
 	catch(const std::exception& e)
@@ -44,8 +44,8 @@ int main(void)
 		a[2] = Awesome(20);
 		try
 		{
-			std::cout << "size b =" << b.size() << std::endl; 
-			std::cout << "size a =" << a.size() << std::endl; ; 
+			std::cout << "size b = " << b.size() << std::endl; 
+			std::cout << "size a = " << a.size() << std::endl; ; 
 			a[5] = Awesome(21);
 		}
 		catch(const std::exception& e)
@@ -66,8 +66,8 @@ int main(void)
 			std::cout << a[i] << " " << std::endl;
 		try
 		{
-			std::cout << "size b =" << b.size() << std::endl;
-			std::cout << "size =" << a.size() << " elem[5] = " << a[5] << std::endl;
+			std::cout << "size b = " << b.size() << std::endl;
+			std::cout << "size = " << a.size() << " elem[5] = " << a[5] << std::endl;
 		}
 		catch(const std::exception& e)
 		{
