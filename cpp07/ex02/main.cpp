@@ -4,20 +4,21 @@
 
 class Awesome {
     public:
-      Awesome( int n = 0 ) : _n( n ) {}
-      bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
-      bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
-      bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
-      bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
-      bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
-      bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
-  //private:
-      int _n;
+    	Awesome( int n = 0 ) : _n( n ) {}
+    	bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+    	bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+		bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+    	bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+    	bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+    	bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
+	private:
+    	int _n;
   };
 
 int main(void)
 {
 	{
+		std::cout << "Test with a class Awesome" << std::endl;
 		Array<Awesome> a(12);
 		Array<Awesome> b;
 
@@ -35,12 +36,13 @@ int main(void)
 		}
 	}
 	{
-		Array<char> a(3);
+		std::cout << "Test with char" << std::endl;
+		unsigned x = 12;
+		Array<char> a(x);
 		Array<char> b;
 
-		a[0] = 'a';
-		a[1] = 'b';
-		a[2] = 'c';
+		for (unsigned j = 0; j < a.size(); j++)
+			a[j] = 97 + j;
 
 		std::cout << "Array a -> ";
 		for (unsigned int i = 0; i < a.size(); i++)
@@ -49,7 +51,7 @@ int main(void)
 		try
 		{
 			std::cout << "size b = " << b.size() << std::endl;
-			std::cout << "size = " << a.size() << std::endl << "elem[5] = " << a[5] << std::endl;
+			std::cout << "size = " << a.size() << std::endl << "elem[5] = " << a[5] << std::endl << "elem[a.size() + 1] = " << a[x + 1] << std::endl;
 		}
 		catch(const std::exception& e)
 		{
