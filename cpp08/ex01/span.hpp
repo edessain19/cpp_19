@@ -18,7 +18,13 @@ class span
 		~span();
 		span& operator=(span const& copy);
 
-		void	addNumber(int )
+		void addNumber(unsigned int n);
+		int shortestSpan();
+		int longestSpan();
+		std::vector<int>& getList();
+		typedef std::vector<int>::iterator Iter;
+		void addNumber(T un, T deux);
+
 
 	private:
 		span();
