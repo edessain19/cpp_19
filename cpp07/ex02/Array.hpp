@@ -40,9 +40,9 @@ Array<T>::Array(Array<T> const& copy)
 	if (this->_arr)
 		delete[] this->_arr;
 	this->_arr = new T[copy.size()];
-	for (int i = 0; i < copy._n; i++)
-		this->_arr[i] = copy._arr[i];
 	_n = copy._n;
+	for (int i = 0; i < _n; i++)
+		this->_arr[i] = copy._arr[i];
 }
 
 template<typename T>
@@ -60,9 +60,9 @@ Array<T>& Array<T>::operator=(Array<T> const& copy)
 		if (_arr)
 			delete[] _arr;
 		_arr = new T[copy._n];
-		for (unsigned int i = 0; i < copy.size(); i++)
-			_arr[i] = copy._arr[i];
 		_n = copy._n;
+		for (unsigned int i = 0; i < _n; i++)
+			_arr[i] = copy._arr[i];
 	}
 	return (*this);
 }

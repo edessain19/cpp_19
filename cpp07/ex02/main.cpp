@@ -2,10 +2,9 @@
 #include <string>
 #include "Array.hpp"
 
-class
-  Awesome {
+class Awesome {
     public:
-      Awesome( int n = 18 ) : _n( n ) {}
+      Awesome( int n = 0 ) : _n( n ) {}
       bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
       bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
       bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
@@ -16,37 +15,19 @@ class
       int _n;
   };
 
-template <typename T>
-void test(T & a)
-{
-	std::cout << "Array -> " << std::endl;
-	for (unsigned int i = 0; i < a.size(); i++)
-		std::cout << a[i] << " " << std::endl;
-	try
-	{
-		std::cout << "size = " << a.size() << " elem[5] = " ; 
-		a[5];
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << '\n';
-	}
-}
-
 int main(void)
 {
 	{
-		Array<Awesome> a(3);
+		Array<Awesome> a(12);
 		Array<Awesome> b;
 
-		a[0] = Awesome(18);
-		a[1] = Awesome(19);
-		a[2] = Awesome(20);
+		for (unsigned int i = 0; i < 12; i++)
+			a[i] = Awesome(i + 12);
 		try
 		{
 			std::cout << "size b = " << b.size() << std::endl; 
 			std::cout << "size a = " << a.size() << std::endl; ; 
-			a[5] = Awesome(21);
+			a[15] = Awesome(21);
 		}
 		catch(const std::exception& e)
 		{
@@ -61,13 +42,14 @@ int main(void)
 		a[1] = 'b';
 		a[2] = 'c';
 
-		std::cout << "Array -> " << std::endl;
+		std::cout << "Array a -> ";
 		for (unsigned int i = 0; i < a.size(); i++)
-			std::cout << a[i] << " " << std::endl;
+			std::cout << a[i] << " ";
+		std::cout << std::endl;
 		try
 		{
 			std::cout << "size b = " << b.size() << std::endl;
-			std::cout << "size = " << a.size() << " elem[5] = " << a[5] << std::endl;
+			std::cout << "size = " << a.size() << std::endl << "elem[5] = " << a[5] << std::endl;
 		}
 		catch(const std::exception& e)
 		{
