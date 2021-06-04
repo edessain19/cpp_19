@@ -52,6 +52,7 @@ void span::addNumber(unsigned int n)
 	if (_list.size() >= _nMax)
 		throw std::exception();
 	_list.push_back(n);
+	sort(_list.begin(), _list.end());
 }
 void span::addNumber(Iter un, Iter deux)
 {
