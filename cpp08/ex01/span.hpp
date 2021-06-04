@@ -21,14 +21,15 @@ class span
 		void addNumber(unsigned int n);
 		int shortestSpan();
 		int longestSpan();
-		std::vector<int>& getList();
+		std::vector<int>& getVector();
+		
 		typedef std::vector<int>::iterator Iter;
-		void addNumber(T un, T deux);
+		void addNumber(Iter un, Iter deux);
 
 
 	private:
 		span();
-		unsigned int _n;
+		unsigned int _nMax;
 		std::vector<int> 	_list;
 };
 
