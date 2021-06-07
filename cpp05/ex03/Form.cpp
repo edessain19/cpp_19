@@ -7,7 +7,7 @@
 
 // DEFAULT
 Form::Form(std::string const &name, int gradeSign, int gradeExec) 
-: _name(name), _signe(false), _gradeSign(ExceptionGrade(gradeSign)), _gradeExec(ExceptionGrade(gradeExec)) {}
+: _name(name), _signe(false), _gradeSign(verifyGrade(gradeSign)), _gradeExec(verifyGrade(gradeExec)) {}
 
 // COPY
 Form::Form(Form const& copy)
@@ -32,19 +32,18 @@ Form& Form::operator=(Form const& copy)
 	if (this != &copy)
 	{
 		_signe = copy.getSigne();
-		//All the rest are constant members and cannot be changed value after initiliazation
 	}
 	return *this;
 }
 
 void operator<<(std::ostream &stream, Form &F)
 {
-  stream << "The form " << F.getName();
-  if (F.getSigne() == true)
-    stream << " is signed, ";
-  else
-    stream << " is not signed, ";
-  stream << "grade to sign: " << F.getGrade_sign() << ", grade to execute: " << F.getGrade_exec() << std::endl;
+	stream << "The form " << F.getName();
+	if (F.getSigne() == true)
+		stream << " is signed, ";
+	else
+		stream << " is not signed, ";
+  	stream << "grade to sign: " << F.getGrade_sign() << ", grade to execute: " << F.getGrade_exec() << std::endl;
 }
 
 /*
@@ -73,7 +72,7 @@ int Form::getGrade_exec() const
 
 void Form::beSigned(Bureaucrat const &B)
 {
-  	if (ExceptionGrade(B.getGrade(), _gradeSign))
+  	if (verifyGrade(B.getGrade(), _gradeSign))
   	{
       	_signe = true;
       	B.signForm(*this);
@@ -84,17 +83,17 @@ void Form::beSigned(Bureaucrat const &B)
 
 int Form::execute(Bureaucrat const & executor) const
 {
-  	if (!ExceptionGrade(executor.getGrade(), _gradeExec))
+  	if (!verifyGrade(executor.getGrade(), _gradeExec))
     	return 1;
-  	else if (!ExceptionUnsigned())
+  	else if (!verifySignature())
     	return 3;
   	Action();
   	return 0;
 }
 
-int Form::ExceptionGrade(int new_grade) const
+int Form::verifyGrade(int new_grade) const
 {
-	try //Try scope contains throw keyword, throw keyword is followed by parameter and linked with catch scope that contains same parameter, in catch scope you can set what you want but usually if exception class is used, its error output function is used
+	try
 	{
 		if (new_grade > 150)
 			throw GradeTooLowException();
@@ -102,14 +101,14 @@ int Form::ExceptionGrade(int new_grade) const
 			throw GradeTooHighException();
 		return new_grade;
 	}
-	catch (std::exception &e) //Is catchable by std::exception, as it has the std::exception as parent
+	catch (std::exception &e) 
 	{
 		e.what();
-		return 1; //If invalid grade set to one so that it does not get executed or signed when it should not
+		return 1;
 	}
 }
 
-bool Form::ExceptionGrade(int grade, int minimum_grade) const
+bool Form::verifyGrade(int grade, int minimum_grade) const
 {
 	try
 	{
@@ -124,7 +123,7 @@ bool Form::ExceptionGrade(int grade, int minimum_grade) const
 	return true;
 }
 
-bool Form::ExceptionUnsigned() const
+bool Form::verifySignature() const
 {
 	try
 	{

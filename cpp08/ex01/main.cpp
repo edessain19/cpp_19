@@ -11,57 +11,57 @@ public:
 
 int main(void)
 {
-	// {
-	// 	std::cout << "================EMPTY=================" << std::endl;
-	// 	span f(1);
+	{
+		std::cout << "================EMPTY=================" << std::endl;
+		span f(1);
 
-	// 	try
-	// 	{
-	// 		std::cout << "short span: " << f.shortestSpan() << std::endl;
-	// 	}
-	// 	catch(const std::exception& e)
-	// 	{
-	// 		std::cout << e.what() << '\n';
-	// 	}
-	// 	try
-	// 	{
-	// 		std::cout << "long span: " << f.longestSpan() << std::endl;
-	// 	}
-	// 	catch(const std::exception& e)
-	// 	{
-	// 		std::cout << e.what() << '\n';
-	// 	}
-	// }
-	// {
-	// 	std::cout << "================ADD NUMBER=================" << std::endl;
+		try
+		{
+			std::cout << "short span: " << f.shortestSpan() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << e.what() << '\n';
+		}
+		try
+		{
+			std::cout << "long span: " << f.longestSpan() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << e.what() << '\n';
+		}
+	}
+	{
+		std::cout << "================ADD NUMBER=================" << std::endl;
 
-	// 	span f(4);
-	// 	f.addNumber(5);
-	// 	f.addNumber(10);
-	// 	f.addNumber(3);
-	// 	f.addNumber(2);
-	// 	for (std::vector<int>::iterator it = f.getVec().begin(); it != f.getVec().end(); it++)
-	// 		std::cout << *it << " ";
-	// 	std::cout << std::endl;
-	// 	std::cout << "short span: " << f.shortestSpan() << " long span: " << f.longestSpan() << std::endl;
-	// }
-	// {
-	// 	std::cout << "================GENERATE=================" << std::endl;
+		span f(4);
+		f.addNumber(5);
+		f.addNumber(10);
+		f.addNumber(3);
+		f.addNumber(2);
+		for (std::vector<int>::iterator it = f.getVector().begin(); it != f.getVector().end(); it++)
+			std::cout << *it << " ";
+		std::cout << std::endl;
+		std::cout << "short span: " << f.shortestSpan() << " long span: " << f.longestSpan() << std::endl;
+	}
+	{
+		std::cout << "================GENERATE=================" << std::endl;
 
-	// 	span f(6);
-	// 	std::vector<int> v(6, 0);
-	// 	generate(v.begin(), v.end(), Generate());
-	// 	f.addNumber(v.begin(), v.end());
-	// 	std::cout << "vector Generated: ";
-	// 	for (std::vector<int>::iterator it = v.begin(); it != v.end(); it++)
-	// 		std::cout << *it << " ";
-	// 	std::cout << std::endl;
-	// 	std::cout << "arr: ";
-	// 	for (std::vector<int>::iterator it = f.getVec().begin(); it != f.getVec().end(); it++)
-	// 		std::cout << *it << " ";
-	// 	std::cout << std::endl;
-	// 	std::cout << "short span: " << f.shortestSpan() << " long span: " << f.longestSpan() << std::endl;
-	// }
+		span f(6);
+		std::vector<int> v(6, 0);
+		generate(v.begin(), v.end(), Generate());
+		f.addNumber(v.begin(), v.end());
+		std::cout << "vector Generated: ";
+		for (std::vector<int>::iterator it = v.begin(); it != v.end(); it++)
+			std::cout << *it << " ";
+		std::cout << std::endl;
+		std::cout << "arr: ";
+		for (std::vector<int>::iterator it = f.getVector().begin(); it != f.getVector().end(); it++)
+			std::cout << *it << " ";
+		std::cout << std::endl;
+		std::cout << "short span: " << f.shortestSpan() << " long span: " << f.longestSpan() << std::endl;
+	}
 	{
 		std::cout << "========================GIVEN TEST==========================" << std::endl;
 		span sp = span(5);

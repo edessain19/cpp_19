@@ -37,7 +37,7 @@ void RobotomyRequestForm::Action() const
 
 	srand(time(NULL)); // initialize random seed, otherwise not random
 	i = rand() % 2;  //generate a number between 0 and 1
-	std::cout << "Drill... DRill... DRIll... DRILl... DRILL... DRILL!" << std::endl;
+	std::cout << "Drill... DRill... DRIll...!" << std::endl;
 	if (i)
     	std::cout << _target << " has been robotomized successfully" << std::endl;
 	else
